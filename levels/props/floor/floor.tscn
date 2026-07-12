@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://drgecp0fnfarr"]
+
+[ext_resource type="Texture2D" uid="uid://32j2vlrq3oq" path="res://assets/art/platform.png" id="1_nftxu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
+
+[node name="Floor" type="StaticBody2D" unique_id=1488798935]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=751121080]
+texture = ExtResource("1_nftxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=337564880]
+shape = SubResource("WorldBoundaryShape2D_g4v7s")

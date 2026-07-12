@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://capishiip6h8c"]
+
+[ext_resource type="Script" uid="uid://bdeernyc0es8u" path="res://entities/npc/npc.gd" id="1_e3lg2"]
+[ext_resource type="Texture2D" uid="uid://c85ehxscfuask" path="res://icon.svg" id="1_gwous"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gwous")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 107.01869
+
+[node name="Npc" type="Area2D" unique_id=1603411725]
+script = ExtResource("1_e3lg2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1856507678]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1696711236]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Label" type="Label" parent="." unique_id=566491724]
+offset_left = -93.0
+offset_top = 94.0
+offset_right = 87.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "[E] Interact"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

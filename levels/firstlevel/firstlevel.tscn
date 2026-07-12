@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d2antuqdl506t"]
+
+[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="1_v5jjw"]
+[ext_resource type="PackedScene" uid="uid://drgecp0fnfarr" path="res://levels/props/floor/floor.tscn" id="2_li6o6"]
+[ext_resource type="PackedScene" uid="uid://capishiip6h8c" path="res://entities/npc/npc.tscn" id="3_mp832"]
+
+[node name="Firstlevel" type="Node2D" unique_id=1269178636]
+metadata/_edit_horizontal_guides_ = [-180.0]
+
+[node name="Floor" parent="." unique_id=1488798935 instance=ExtResource("2_li6o6")]
+position = Vector2(-1, 106)
+
+[node name="Floor2" parent="." unique_id=2020502240 instance=ExtResource("2_li6o6")]
+position = Vector2(1117, 106)
+
+[node name="Floor3" parent="." unique_id=1952332093 instance=ExtResource("2_li6o6")]
+position = Vector2(2241, 106)
+
+[node name="Npc" parent="." unique_id=1603411725 instance=ExtResource("3_mp832")]
+position = Vector2(1522, -5)
+
+[node name="player" parent="." unique_id=1699463660 instance=ExtResource("1_v5jjw")]
