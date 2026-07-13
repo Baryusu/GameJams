@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bv6fqm7c6vq58" path="res://levels/props/wall/wall.tscn" id="1_3ssnx"]
 [ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_k3yr0"]
 [ext_resource type="PackedScene" uid="uid://drgecp0fnfarr" path="res://levels/props/floor/floor.tscn" id="2_whgc7"]
+[ext_resource type="PackedScene" uid="uid://0uv3ehdgoinu" path="res://items/file/file.tscn" id="4_tj8ci"]
+[ext_resource type="Texture2D" uid="uid://cdmw8d1lh0ol2" path="res://items/file/file.png" id="5_ehihl"]
+[ext_resource type="PackedScene" uid="uid://i0k28vborp3c" path="res://ui/HUD/hud.tscn" id="5_j7xou"]
 
 [node name="secondlevel" type="Node2D" unique_id=1269178636]
 metadata/_edit_horizontal_guides_ = [-180.0]
@@ -23,5 +26,11 @@ position = Vector2(1117, 106)
 position = Vector2(2241, 106)
 
 [node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_k3yr0")]
+
+[node name="File" parent="." unique_id=1951485019 instance=ExtResource("4_tj8ci")]
+position = Vector2(933, 96)
+item_icon = ExtResource("5_ehihl")
+
+[node name="HUD" parent="." unique_id=1076876402 instance=ExtResource("5_j7xou")]
 
 [editable path="Wall"]

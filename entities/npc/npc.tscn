@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdeernyc0es8u" path="res://entities/npc/npc.gd" id="1_e3lg2"]
 [ext_resource type="Texture2D" uid="uid://c85ehxscfuask" path="res://icon.svg" id="1_gwous"]
+[ext_resource type="Resource" uid="uid://cld11o0fx74kw" path="res://dialogue/steve.dialogue" id="2_7bf1a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -19,6 +20,7 @@ radius = 107.01869
 
 [node name="Npc" type="Area2D" unique_id=1603411725]
 script = ExtResource("1_e3lg2")
+dialogue_resource = ExtResource("2_7bf1a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1856507678]
 sprite_frames = SubResource("SpriteFrames_g4v7s")

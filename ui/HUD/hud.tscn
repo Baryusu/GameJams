@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://i0k28vborp3c"]
+
+[ext_resource type="Script" uid="uid://ci06fte4e2kw0" path="res://ui/HUD/hud.gd" id="1_sv3wa"]
+[ext_resource type="PackedScene" uid="uid://b48n616c5oa1a" path="res://ui/inventory/inventory.tscn" id="2_1e5it"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1076876402]
+script = ExtResource("1_sv3wa")
+
+[node name="inventory_gui" parent="." unique_id=204708112 instance=ExtResource("2_1e5it")]

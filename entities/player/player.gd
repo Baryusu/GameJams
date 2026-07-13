@@ -25,3 +25,25 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * SPEED
 
 	move_and_slide()
+	
+# --- INVENTORY LOGIC ---
+const MAX_SLOTS: int = 6
+var inventory: Array = [] # Will now hold dictionaries instead of just text
+
+func add_item(new_name: String, new_icon: Texture2D) -> bool:
+	if inventory.size() < MAX_SLOTS:
+		# Create a dictionary holding the item's details
+		var item_data = {
+			"name": new_name,
+			"icon": new_icon
+		}
+		
+		inventory.append(item_data)
+		print("Picked up: ", new_name)
+		
+		# Shout to the UI that the inventory changed
+		EventBus.inventory_updated.emit(inventory)
+		return true 
+		
+	print("Failed! Inventory is full.")
+	return false

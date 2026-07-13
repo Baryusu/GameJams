@@ -42,6 +42,9 @@ signal paused_typing(duration: float)
 ## The amount of time to pause when exposing a character present in `pause_at_characters`.
 @export var seconds_per_pause_step: float = 0.3
 
+## The portrait of the character
+@onready var portrait: TextureRect = %Portrait
+
 var _already_mutated_indices: PackedInt32Array = []
 
 

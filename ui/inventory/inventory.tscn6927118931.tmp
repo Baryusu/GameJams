@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b48n616c5oa1a"]
+
+[ext_resource type="Script" uid="uid://caxa1ipwdpngm" path="res://ui/inventory/inventory_ui.gd" id="1_qrt2q"]
+[ext_resource type="Texture2D" uid="uid://c1qcsl65chi1q" path="res://assets/art/ui/container.png" id="1_t68fq"]
+[ext_resource type="PackedScene" uid="uid://bmjpg66pysm1m" path="res://ui/inventory/inventory_slot.tscn" id="2_s83yu"]
+
+[node name="inventory_gui" type="Control" unique_id=204708112]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qrt2q")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=353761235]
+layout_mode = 1
+offset_left = 3.0
+offset_right = 585.0
+offset_bottom = 102.0
+texture = ExtResource("1_t68fq")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="HboxContainer" type="HBoxContainer" parent="NinePatchRect" unique_id=801162325]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 562.0
+offset_bottom = 555.0
+
+[node name="inventory_slot" parent="NinePatchRect/HboxContainer" unique_id=1589413414 instance=ExtResource("2_s83yu")]
+layout_mode = 2
+
+[node name="inventory_slot2" parent="NinePatchRect/HboxContainer" unique_id=1457966921 instance=ExtResource("2_s83yu")]
+layout_mode = 2
+
+[node name="inventory_slot3" parent="NinePatchRect/HboxContainer" unique_id=1364641392 instance=ExtResource("2_s83yu")]
+layout_mode = 2
+
+[node name="inventory_slot4" parent="NinePatchRect/HboxContainer" unique_id=1171841922 instance=ExtResource("2_s83yu")]
+layout_mode = 2
+
+[node name="inventory_slot5" parent="NinePatchRect/HboxContainer" unique_id=1056142311 instance=ExtResource("2_s83yu")]
+layout_mode = 2
+
+[node name="inventory_slot6" parent="NinePatchRect/HboxContainer" unique_id=1174213814 instance=ExtResource("2_s83yu")]
+layout_mode = 2

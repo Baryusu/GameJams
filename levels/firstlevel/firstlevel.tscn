@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="1_v5jjw"]
 [ext_resource type="PackedScene" uid="uid://drgecp0fnfarr" path="res://levels/props/floor/floor.tscn" id="2_li6o6"]
 [ext_resource type="PackedScene" uid="uid://capishiip6h8c" path="res://entities/npc/npc.tscn" id="3_mp832"]
+[ext_resource type="PackedScene" uid="uid://i0k28vborp3c" path="res://ui/HUD/hud.tscn" id="5_puwrt"]
 
 [node name="Firstlevel" type="Node2D" unique_id=1269178636]
 metadata/_edit_horizontal_guides_ = [-180.0]
@@ -27,5 +28,7 @@ position = Vector2(2241, 106)
 position = Vector2(1522, -5)
 
 [node name="player" parent="." unique_id=1699463660 instance=ExtResource("1_v5jjw")]
+
+[node name="HUD" parent="." unique_id=1076876402 instance=ExtResource("5_puwrt")]
 
 [editable path="Wall"]

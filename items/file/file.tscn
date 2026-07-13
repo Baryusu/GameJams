@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://0uv3ehdgoinu"]
+
+[ext_resource type="Script" uid="uid://v3fq8rbyjirv" path="res://items/file/file.gd" id="1_4dp7f"]
+[ext_resource type="Texture2D" uid="uid://cdmw8d1lh0ol2" path="res://items/file/file.png" id="2_4oksr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4oksr"]
+radius = 82.02438
+
+[node name="File" type="Area2D" unique_id=1951485019]
+script = ExtResource("1_4dp7f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=456737103]
+texture = ExtResource("2_4oksr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1288737966]
+shape = SubResource("CircleShape2D_4oksr")
+
+[node name="Label" type="Label" parent="." unique_id=1086156986]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "[E] Interact"
