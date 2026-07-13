@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://trdmj30ivgq7"]
+
+[ext_resource type="PackedScene" uid="uid://bv6fqm7c6vq58" path="res://levels/props/wall/wall.tscn" id="1_3ssnx"]
+[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_k3yr0"]
+[ext_resource type="PackedScene" uid="uid://drgecp0fnfarr" path="res://levels/props/floor/floor.tscn" id="2_whgc7"]
+
+[node name="secondlevel" type="Node2D" unique_id=1269178636]
+metadata/_edit_horizontal_guides_ = [-180.0]
+
+[node name="Wall" parent="." unique_id=117624596 instance=ExtResource("1_3ssnx")]
+position = Vector2(-44, -147)
+
+[node name="Door" parent="Wall" index="2" unique_id=2026830631]
+target_scene = "uid://d2antuqdl506t"
+
+[node name="Floor" parent="." unique_id=1488798935 instance=ExtResource("2_whgc7")]
+position = Vector2(-1, 106)
+
+[node name="Floor2" parent="." unique_id=2020502240 instance=ExtResource("2_whgc7")]
+position = Vector2(1117, 106)
+
+[node name="Floor3" parent="." unique_id=1952332093 instance=ExtResource("2_whgc7")]
+position = Vector2(2241, 106)
+
+[node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_k3yr0")]
+
+[editable path="Wall"]

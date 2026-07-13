@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bv6fqm7c6vq58"]
+
+[ext_resource type="Texture2D" uid="uid://ci55lobibf6hp" path="res://assets/art/wall.png" id="1_sen61"]
+[ext_resource type="PackedScene" uid="uid://c1o4nyfwrbp45" path="res://levels/props/door/door.tscn" id="2_bo70l"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cx50v"]
+normal = Vector2(0, 1)
+distance = 48.0
+
+[node name="Wall" type="StaticBody2D" unique_id=117624596]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2032880698]
+texture = ExtResource("1_sen61")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1584825321]
+shape = SubResource("WorldBoundaryShape2D_cx50v")
+debug_color = Color(0.93279326, 0.24920511, 0.19724107, 0.41960785)
+
+[node name="Door" parent="." unique_id=2026830631 instance=ExtResource("2_bo70l")]
+position = Vector2(-2, 66)

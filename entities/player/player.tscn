@@ -27,4 +27,5 @@ sprite_frames = SubResource("SpriteFrames_g4v7s")
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=531151119]
+position = Vector2(0, -97)
 position_smoothing_enabled = true
