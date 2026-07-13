@@ -14,13 +14,13 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_vector("left", "right", "up", "down")
 	if Input.is_action_just_pressed("up"):
-		direction.x += 1
-	elif Input.is_action_just_pressed("down"):
-		direction.x -= 1
-	elif Input.is_action_just_pressed("left"):
-		direction.y -= 1
-	else:
 		direction.y += 1
+	elif Input.is_action_just_pressed("down"):
+		direction.y -= 1
+	elif Input.is_action_just_pressed("left"):
+		direction.x -= 1
+	elif Input.is_action_just_pressed("right"):
+		direction.x += 1
 	
 	velocity = direction * SPEED
 
