@@ -29,6 +29,7 @@ position = Vector2(2241, 106)
 
 [node name="File" parent="." unique_id=1951485019 instance=ExtResource("4_tj8ci")]
 position = Vector2(933, 96)
+item_id = "level_2_flashlight"
 item_icon = ExtResource("5_ehihl")
 
 [node name="HUD" parent="." unique_id=1076876402 instance=ExtResource("5_j7xou")]

@@ -21,6 +21,7 @@ DialogueManager="*uid://c3rodes2l3gxb"
 _mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
 SceneManager="*uid://bqwiuwuksdnub"
 EventBus="*uid://bh86r7ac50eyd"
+GlobalData="*uid://bpt1hjgxns4x7"
 
 [dialogue_manager]
 

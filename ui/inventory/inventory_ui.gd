@@ -6,8 +6,13 @@ var current_selected_index: int = 0 # Keeps track of the highlighted slot (0 to 
 @onready var box_container: HBoxContainer = $NinePatchRect/HboxContainer
 
 func _ready() -> void:
+	# 1. Start listening to the radio station for future updates
 	EventBus.inventory_updated.connect(update_ui)
-	# Turn on the selector for the first slot when the game starts
+	
+	# 2. NEW: Immediately draw whatever is already saved in the vault!
+	update_ui(GlobalData.inventory)
+	
+	# 3. Turn on the selector for the first slot
 	update_selection()
 
 # --- YOUR EXISTING OPEN/CLOSE LOGIC ---
@@ -55,13 +60,23 @@ func update_selection() -> void:
 		# If this slot's number matches our current selection, show the square!
 		if i == current_selected_index:
 			selector_ui.visible = true
+			# If the slot we highlighted actually has an item in it...
+			if i < current_inventory.size():
+				# Grab the item data and combine the Name and Description
+				var selected_item = current_inventory[i]
+				description_label.text = selected_item["name"] + "\n" + selected_item["description"]
+			else:
+				# If the slot is empty, clear the text!
+				description_label.text = "Empty Slot"
 		# Otherwise, hide it!
 		else:
 			selector_ui.visible = false
 # --------------------------------------
-
+var current_inventory: Array = []
+@onready var description_label: Label = $DescriptionLabel
 # --- YOUR EXISTING DISPLAY LOGIC ---
 func update_ui(inventory_data: Array) -> void:
+	current_inventory = inventory_data
 	var slots = box_container.get_children()
 	
 	for i in range(slots.size()):

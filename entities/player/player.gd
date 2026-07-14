@@ -28,21 +28,21 @@ func _physics_process(delta: float) -> void:
 	
 # --- INVENTORY LOGIC ---
 const MAX_SLOTS: int = 6
-var inventory: Array = [] # Will now hold dictionaries instead of just text
 
-func add_item(new_name: String, new_icon: Texture2D) -> bool:
-	if inventory.size() < MAX_SLOTS:
+func add_item(new_name: String, new_icon: Texture2D, new_description: String) -> bool:
+	if GlobalData.inventory.size() < MAX_SLOTS:
 		# Create a dictionary holding the item's details
 		var item_data = {
 			"name": new_name,
-			"icon": new_icon
+			"icon": new_icon,
+			"description": new_description
 		}
 		
-		inventory.append(item_data)
+		GlobalData.inventory.append(item_data)
 		print("Picked up: ", new_name)
 		
 		# Shout to the UI that the inventory changed
-		EventBus.inventory_updated.emit(inventory)
+		EventBus.inventory_updated.emit(GlobalData.inventory)
 		return true 
 		
 	print("Failed! Inventory is full.")
