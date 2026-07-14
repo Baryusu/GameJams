@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://8dycf58xso7l"]
+
+[ext_resource type="Script" uid="uid://bpcxfquqmlxqi" path="res://levels/gameplay.gd" id="1_m7c0h"]
+[ext_resource type="PackedScene" uid="uid://i0k28vborp3c" path="res://ui/HUD/hud.tscn" id="1_wwjgm"]
+[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_lmhhx"]
+[ext_resource type="Script" uid="uid://e7vfd0gie3k6" path="res://ui/PauseMenu/pause_menu.gd" id="3_lmhhx"]
+
+[node name="gameplay" type="Node2D" unique_id=453224137]
+script = ExtResource("1_m7c0h")
+
+[node name="LevelRoot" type="Node2D" parent="." unique_id=1275452602]
+
+[node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_lmhhx")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1969751955]
+
+[node name="HUD" parent="UI" unique_id=1076876402 instance=ExtResource("1_wwjgm")]
+
+[node name="PauseMenu" type="CanvasLayer" parent="UI" unique_id=266166256]
+visible = false
+script = ExtResource("3_lmhhx")
+
+[node name="Panel" type="Panel" parent="UI/PauseMenu" unique_id=135837137]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Panel" unique_id=1048784304]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Resume" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=8784425]
+layout_mode = 2
+text = "Resume"
+
+[node name="QuitToMenu" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=1840089490]
+layout_mode = 2
+text = "Quit To Menu"

@@ -1,20 +1,17 @@
 [gd_scene format=3 uid="uid://trdmj30ivgq7"]
 
-[ext_resource type="PackedScene" uid="uid://bv6fqm7c6vq58" path="res://levels/props/wall/wall.tscn" id="1_3ssnx"]
-[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_k3yr0"]
 [ext_resource type="PackedScene" uid="uid://drgecp0fnfarr" path="res://levels/props/floor/floor.tscn" id="2_whgc7"]
+[ext_resource type="Texture2D" uid="uid://ci55lobibf6hp" path="res://assets/art/wall.png" id="4_ehihl"]
 [ext_resource type="PackedScene" uid="uid://0uv3ehdgoinu" path="res://items/file/file.tscn" id="4_tj8ci"]
+[ext_resource type="Texture2D" uid="uid://f16pr7d83gnb" path="res://assets/art/door.png" id="5_5oniy"]
 [ext_resource type="Texture2D" uid="uid://cdmw8d1lh0ol2" path="res://items/file/file.png" id="5_ehihl"]
-[ext_resource type="PackedScene" uid="uid://i0k28vborp3c" path="res://ui/HUD/hud.tscn" id="5_j7xou"]
+[ext_resource type="Script" uid="uid://xfp3lm043214" path="res://levels/secondlevel/door/detection.gd" id="6_8auyx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvbvx"]
+size = Vector2(190, 210)
 
 [node name="secondlevel" type="Node2D" unique_id=1269178636]
 metadata/_edit_horizontal_guides_ = [-180.0]
-
-[node name="Wall" parent="." unique_id=117624596 instance=ExtResource("1_3ssnx")]
-position = Vector2(-44, -147)
-
-[node name="Door" parent="Wall" index="2" unique_id=2026830631]
-target_scene = "uid://d2antuqdl506t"
 
 [node name="Floor" parent="." unique_id=1488798935 instance=ExtResource("2_whgc7")]
 position = Vector2(-1, 106)
@@ -25,13 +22,33 @@ position = Vector2(1117, 106)
 [node name="Floor3" parent="." unique_id=1952332093 instance=ExtResource("2_whgc7")]
 position = Vector2(2241, 106)
 
-[node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_k3yr0")]
-
 [node name="File" parent="." unique_id=1951485019 instance=ExtResource("4_tj8ci")]
 position = Vector2(933, 96)
 item_id = "level_2_flashlight"
 item_icon = ExtResource("5_ehihl")
 
-[node name="HUD" parent="." unique_id=1076876402 instance=ExtResource("5_j7xou")]
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=139185050]
+position = Vector2(-463, 108)
 
-[editable path="Wall"]
+[node name="Wall" type="Node2D" parent="." unique_id=252402115]
+position = Vector2(-605, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1458833768]
+position = Vector2(566, -152)
+texture = ExtResource("4_ehihl")
+
+[node name="Door" type="Node2D" parent="Wall" unique_id=2138608593]
+position = Vector2(556, -85)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall/Door" unique_id=508181445]
+texture = ExtResource("5_5oniy")
+
+[node name="Detection" type="Area2D" parent="Wall/Door" unique_id=64915591]
+script = ExtResource("6_8auyx")
+
+[node name="ColDetection" type="CollisionShape2D" parent="Wall/Door/Detection" unique_id=1091092740]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_cvbvx")
+
+[connection signal="body_entered" from="Wall/Door/Detection" to="Wall/Door/Detection" method="_on_body_entered"]
+[connection signal="body_exited" from="Wall/Door/Detection" to="Wall/Door/Detection" method="_on_body_exited"]
