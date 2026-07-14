@@ -3,12 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://drgecp0fnfarr" path="res://levels/props/floor/floor.tscn" id="2_whgc7"]
 [ext_resource type="Texture2D" uid="uid://ci55lobibf6hp" path="res://assets/art/wall.png" id="4_ehihl"]
 [ext_resource type="PackedScene" uid="uid://0uv3ehdgoinu" path="res://items/file/file.tscn" id="4_tj8ci"]
-[ext_resource type="Texture2D" uid="uid://f16pr7d83gnb" path="res://assets/art/door.png" id="5_5oniy"]
 [ext_resource type="Texture2D" uid="uid://cdmw8d1lh0ol2" path="res://items/file/file.png" id="5_ehihl"]
-[ext_resource type="Script" uid="uid://xfp3lm043214" path="res://levels/secondlevel/door/detection.gd" id="6_8auyx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvbvx"]
-size = Vector2(190, 210)
+[ext_resource type="PackedScene" uid="uid://c1o4nyfwrbp45" path="res://levels/props/door/door.tscn" id="5_j7xou"]
 
 [node name="secondlevel" type="Node2D" unique_id=1269178636]
 metadata/_edit_horizontal_guides_ = [-180.0]
@@ -24,8 +20,9 @@ position = Vector2(2241, 106)
 
 [node name="File" parent="." unique_id=1951485019 instance=ExtResource("4_tj8ci")]
 position = Vector2(933, 96)
-item_id = "level_2_flashlight"
+item_id = "file_01"
 item_icon = ExtResource("5_ehihl")
+item_description = "it is a document"
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=139185050]
 position = Vector2(-463, 108)
@@ -37,18 +34,6 @@ position = Vector2(-605, 0)
 position = Vector2(566, -152)
 texture = ExtResource("4_ehihl")
 
-[node name="Door" type="Node2D" parent="Wall" unique_id=2138608593]
-position = Vector2(556, -85)
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall/Door" unique_id=508181445]
-texture = ExtResource("5_5oniy")
-
-[node name="Detection" type="Area2D" parent="Wall/Door" unique_id=64915591]
-script = ExtResource("6_8auyx")
-
-[node name="ColDetection" type="CollisionShape2D" parent="Wall/Door/Detection" unique_id=1091092740]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_cvbvx")
-
-[connection signal="body_entered" from="Wall/Door/Detection" to="Wall/Door/Detection" method="_on_body_entered"]
-[connection signal="body_exited" from="Wall/Door/Detection" to="Wall/Door/Detection" method="_on_body_exited"]
+[node name="Door" parent="Wall" unique_id=2026830631 instance=ExtResource("5_j7xou")]
+position = Vector2(591, -68)
+target_scene = "uid://d2antuqdl506t"

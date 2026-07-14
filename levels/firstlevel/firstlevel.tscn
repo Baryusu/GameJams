@@ -3,11 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://drgecp0fnfarr" path="res://levels/props/floor/floor.tscn" id="2_li6o6"]
 [ext_resource type="Texture2D" uid="uid://ci55lobibf6hp" path="res://assets/art/wall.png" id="3_ikril"]
 [ext_resource type="PackedScene" uid="uid://capishiip6h8c" path="res://entities/npc/npc.tscn" id="3_mp832"]
-[ext_resource type="Texture2D" uid="uid://f16pr7d83gnb" path="res://assets/art/door.png" id="4_ikril"]
-[ext_resource type="Script" uid="uid://bpxa3lymfgqu4" path="res://levels/firstlevel/door/detection.gd" id="5_puwrt"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(190, 210)
+[ext_resource type="PackedScene" uid="uid://c1o4nyfwrbp45" path="res://levels/props/door/door.tscn" id="4_ikril"]
+[ext_resource type="PackedScene" uid="uid://b7gcjbjqd1pju" path="res://items/note/note.tscn" id="5_puwrt"]
 
 [node name="Firstlevel" type="Node2D" unique_id=1269178636]
 metadata/_edit_horizontal_guides_ = [-180.0]
@@ -33,18 +30,30 @@ position = Vector2(-384, 130)
 position = Vector2(566, -152)
 texture = ExtResource("3_ikril")
 
-[node name="Door" type="Node2D" parent="Wall" unique_id=1012536920]
-position = Vector2(556, -85)
+[node name="Door" parent="Wall" unique_id=2026830631 instance=ExtResource("4_ikril")]
+position = Vector2(566, -87)
+target_scene = "uid://trdmj30ivgq7"
 
-[node name="Sprite2D" type="Sprite2D" parent="Wall/Door" unique_id=386410633]
-texture = ExtResource("4_ikril")
+[node name="Note" parent="." unique_id=241257908 instance=ExtResource("5_puwrt")]
+position = Vector2(121, 96)
+note_id = "note_01"
+note_title = "Testimony 1"
+note_text = "fffffffffffffffffwwwwwwwwwwwwwwf frrrrrrrrrrrrrr ttttttttttttt tttttttttt"
 
-[node name="Detection" type="Area2D" parent="Wall/Door" unique_id=1059812820]
-script = ExtResource("5_puwrt")
+[node name="Note2" parent="." unique_id=119867576 instance=ExtResource("5_puwrt")]
+position = Vector2(498, 93)
+note_id = "note_02"
+note_title = "Testimony 2"
+note_text = "fffffffffffffff ffffffffffffffff ffffffffffffff fffffffffffffff fffffffff ffff ffffffff fffff"
 
-[node name="ColDetection" type="CollisionShape2D" parent="Wall/Door/Detection" unique_id=1194229984]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_g4v7s")
+[node name="Note3" parent="." unique_id=855590596 instance=ExtResource("5_puwrt")]
+position = Vector2(391, 121)
+note_id = "note_03"
+note_title = "Testimony 3"
+note_text = "fdvsdbtbbbbbbbbbbbtvvvvv ggggggggggg gggggggggggggg gtdddddddddddddddd"
 
-[connection signal="body_entered" from="Wall/Door/Detection" to="Wall/Door/Detection" method="_on_body_entered"]
-[connection signal="body_exited" from="Wall/Door/Detection" to="Wall/Door/Detection" method="_on_body_exited"]
+[node name="Note4" parent="." unique_id=39242113 instance=ExtResource("5_puwrt")]
+position = Vector2(282, 94)
+note_id = "note_04"
+note_title = "Testimony 4"
+note_text = "dheuidiwdhw wejbfhiwbfiuw jewhdjiwhefiuwef idhwheofhwof deuiwefhwifw uidhiwe"

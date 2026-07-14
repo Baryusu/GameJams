@@ -2,7 +2,6 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 3000.0
-const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
@@ -47,3 +46,19 @@ func add_item(new_name: String, new_icon: Texture2D, new_description: String) ->
 		
 	print("Failed! Inventory is full.")
 	return false
+	
+# Add this inside player.gd, near your existing add_item function
+func add_note(title: String, text: String) -> bool:
+	# Bundle the text into a dictionary
+	var note_data = {
+		"title": title,
+		"text": text
+	}
+	
+	# Save it to the global journal vault
+	GlobalData.journal.append(note_data)
+	print("Note added to Journal! Total notes: ", GlobalData.journal.size())
+	
+	# Return true so the physical paper knows it is safe to delete itself
+	return true
+	

@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://b7gcjbjqd1pju"]
 
+[ext_resource type="Script" uid="uid://dpg4s3scmviht" path="res://items/note/note.gd" id="1_h8725"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 49.0
 
 [node name="Note" type="Area2D" unique_id=241257908]
+script = ExtResource("1_h8725")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1281172642]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=239165204]
 shape = SubResource("CircleShape2D_g4v7s")
@@ -10,3 +16,6 @@ shape = SubResource("CircleShape2D_g4v7s")
 [node name="Label" type="Label" parent="." unique_id=1038682981]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "[E] interact"

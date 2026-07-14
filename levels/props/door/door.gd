@@ -1,5 +1,6 @@
 extends Area2D
 @export_file("*.tscn") var target_scene: String
+@export var target_spawn_point: String = "SpawnPoint"
 var showInteractionLabel:= false
 
 func _process(delta):
@@ -19,4 +20,11 @@ func transition_scene() -> void:
 	if target_scene == "":
 		print("No door available")
 	else:
-		get_tree().change_scene_to_file(target_scene)
+		# 1. Find the main Gameplay node (Assuming it is the root node of your game)
+		var gameplay_manager = get_tree().current_scene
+		
+		# 2. Tell the Gameplay manager to swap the levels using your friend's function!
+		if gameplay_manager != null:
+			gameplay_manager.load_area(target_scene, target_spawn_point)
+		else:
+			print("Error: Could not find the Gameplay node!")

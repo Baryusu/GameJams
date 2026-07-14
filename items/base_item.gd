@@ -42,10 +42,9 @@ func pickup_item() -> void:
 		var was_picked_up = player_in_range.add_item(item_name, item_icon, item_description)
 		
 		if was_picked_up:
-			GlobalData.collected_item_ids.append(item_id)
-			queue_free()
-			_on_successful_pickup()
-			queue_free() # Delete the item from the ground
+				GlobalData.collected_item_ids.append(item_id)
+				queue_free()
+				_on_successful_pickup() # Delete the item from the ground
 
 # Child items can overwrite this if they want to play a sound or effect!
 func _on_successful_pickup() -> void:

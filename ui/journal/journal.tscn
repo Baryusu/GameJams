@@ -1,5 +1,46 @@
 [gd_scene format=3 uid="uid://cr8ww2dup22qc"]
 
-[node name="journal_ui" type="Control" unique_id=1689751123]
-layout_mode = 3
-anchors_preset = 0
+[ext_resource type="Script" uid="uid://dt43vw2i11ol7" path="res://ui/journal/journal_ui.gd" id="1_8wcqu"]
+[ext_resource type="Texture2D" uid="uid://b1ahnpvgyy3oq" path="res://items/note/notebook_cover.png" id="2_allqr"]
+
+[node name="journal_ui" type="CanvasLayer" unique_id=2117124576]
+script = ExtResource("1_8wcqu")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=366172370]
+offset_right = 602.0
+offset_bottom = 565.0
+texture = ExtResource("2_allqr")
+
+[node name="LeftPage" type="RichTextLabel" parent="." unique_id=842062681]
+offset_right = 318.0
+offset_bottom = 564.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+fit_content = true
+
+[node name="RightPage" type="RichTextLabel" parent="." unique_id=1961559073]
+offset_left = 336.0
+offset_top = 5.0
+offset_right = 603.0
+offset_bottom = 567.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+fit_content = true
+
+[node name="PrevButton" type="Label" parent="." unique_id=1781599279]
+offset_left = 26.0
+offset_top = 518.0
+offset_right = 71.0
+offset_bottom = 549.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Back"
+
+[node name="NextButton" type="Label" parent="." unique_id=1841780496]
+offset_left = 527.0
+offset_top = 515.0
+offset_right = 576.0
+offset_bottom = 546.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "NEXT"
