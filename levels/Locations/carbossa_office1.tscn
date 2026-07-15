@@ -29,6 +29,7 @@ texture = ExtResource("1_mnoif")
 position = Vector2(1735, 0)
 
 [node name="Walls" type="Node2D" parent="." unique_id=418854276]
+visible = false
 position = Vector2(468, 0)
 
 [node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=2065762416]
@@ -60,3 +61,7 @@ position = Vector2(1414, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=2110392079]
 position = Vector2(10, -92)
 shape = SubResource("RectangleShape2D_hdrg7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=549803496]
+position = Vector2(1149, -76)
+zoom = Vector2(0.834, 0.834)

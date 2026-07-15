@@ -30,6 +30,7 @@ position = Vector2(75, 112)
 [node name="NPC\'s" type="Node2D" parent="." unique_id=1561991164]
 
 [node name="Walls" type="Node2D" parent="." unique_id=1359864634]
+visible = false
 
 [node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1860252741]
 position = Vector2(-67, 0)
@@ -60,3 +61,7 @@ position = Vector2(1414, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=443079477]
 position = Vector2(10, -92)
 shape = SubResource("RectangleShape2D_sxoyt")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2140384520]
+position = Vector2(693, 2)
+zoom = Vector2(0.834, 0.834)

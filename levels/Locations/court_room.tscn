@@ -26,6 +26,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("1_u5raw")
 
 [node name="Walls" type="Node2D" parent="." unique_id=195740252]
+visible = false
 
 [node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=473724687]
 position = Vector2(-67, 0)

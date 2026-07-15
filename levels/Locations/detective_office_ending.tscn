@@ -26,6 +26,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("1_7qnss")
 
 [node name="Walls" type="Node2D" parent="." unique_id=1073287975]
+visible = false
 
 [node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1314933828]
 position = Vector2(-67, 0)
@@ -65,3 +66,7 @@ position = Vector2(857, 100)
 [node name="NPC1Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=1737778779]
 position = Vector2(1304, 105)
 texture = ExtResource("3_n8jeh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=216146564]
+position = Vector2(693, 23)
+zoom = Vector2(0.834, 0.834)
