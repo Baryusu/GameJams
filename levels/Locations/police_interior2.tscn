@@ -24,14 +24,13 @@ size = Vector2(92, 680)
 position = Vector2(737, -77)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=117117855]
-position = Vector2(330, 0)
-scale = Vector2(5, 5)
+position = Vector2(-517, 73)
 texture = SubResource("CompressedTexture2D_vgi0u")
 
 [node name="Walls" type="Node2D" parent="." unique_id=1335691707]
 
 [node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1314346613]
-position = Vector2(-67, 0)
+position = Vector2(-69, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=2054823139]
 position = Vector2(0, -96.000015)
@@ -39,7 +38,7 @@ scale = Vector2(6.81, 6.81)
 shape = SubResource("RectangleShape2D_n8tea")
 
 [node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=1746642095]
-position = Vector2(531, -363)
+position = Vector2(531, -344)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=37001166]
 position = Vector2(508, 273.00003)
@@ -47,32 +46,36 @@ scale = Vector2(6.705, 6.705)
 shape = SubResource("RectangleShape2D_joqub")
 
 [node name="Floor" type="StaticBody2D" parent="Walls" unique_id=1705646040]
-position = Vector2(175, 317)
+position = Vector2(175, 242)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=1701783259]
 position = Vector2(886.5, -125)
 shape = SubResource("RectangleShape2D_xvhos")
 
 [node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=1597044281]
-position = Vector2(2148, 0)
+position = Vector2(478, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1692459542]
 position = Vector2(10, -92)
 shape = SubResource("RectangleShape2D_mim05")
 
 [node name="player" parent="." unique_id=1699463660 instance=ExtResource("1_0v2b3")]
-position = Vector2(2043, 48)
+position = Vector2(411, 19)
 
 [node name="NPC\'s" type="Node2D" parent="." unique_id=1082135445]
+position = Vector2(-982, 22)
 
 [node name="NPC1Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=667617606]
-position = Vector2(1043, 43)
+position = Vector2(1171, -2.9999995)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_cnyg7")
 
 [node name="NPC2Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=2117790144]
-position = Vector2(1291, 43)
+position = Vector2(1218, -3)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_cnyg7")
 
 [node name="NPC3Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=172388979]
-position = Vector2(1174, 47)
+position = Vector2(1262, -4.999999)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_cnyg7")

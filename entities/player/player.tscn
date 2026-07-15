@@ -108,10 +108,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(128, 126)
+size = Vector2(42, 40)
 
 [node name="player" type="CharacterBody2D" unique_id=1699463660]
-scale = Vector2(3, 3)
 script = ExtResource("1_abrql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=323771873]
@@ -124,5 +123,6 @@ frame_progress = 0.4060475
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=531151119]
-position = Vector2(3, -65.33333)
+position = Vector2(3, -28)
+zoom = Vector2(5.5, 5.5)
 position_smoothing_enabled = true

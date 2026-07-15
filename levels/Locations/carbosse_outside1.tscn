@@ -22,12 +22,11 @@ size = Vector2(92, 680)
 position = Vector2(819, -77)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=267058537]
-position = Vector2(330, 0)
-scale = Vector2(5, 5)
+position = Vector2(-582, 76)
 texture = ExtResource("1_1tuvx")
 
 [node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_r5f8m")]
-position = Vector2(2193, 0)
+position = Vector2(325, 15)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1224628955]
 
@@ -40,7 +39,7 @@ scale = Vector2(6.81, 6.81)
 shape = SubResource("RectangleShape2D_r5f8m")
 
 [node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=1302487878]
-position = Vector2(531, -416)
+position = Vector2(531, -353)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=600302741]
 position = Vector2(572.5, 273.00003)
@@ -48,14 +47,14 @@ scale = Vector2(6.705, 6.705)
 shape = SubResource("RectangleShape2D_ktd5u")
 
 [node name="Floor" type="StaticBody2D" parent="Walls" unique_id=736500877]
-position = Vector2(175, 317)
+position = Vector2(175, 264)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=2042692623]
 position = Vector2(968, -143)
 shape = SubResource("RectangleShape2D_tvr41")
 
 [node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=1034151853]
-position = Vector2(2326, 0)
+position = Vector2(509, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=940418006]
 position = Vector2(10, -92)
@@ -64,9 +63,11 @@ shape = SubResource("RectangleShape2D_l7aym")
 [node name="NPC\'s" type="Node2D" parent="." unique_id=523154592]
 
 [node name="NPC1Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=592790930]
-position = Vector2(385, 0)
+position = Vector2(67, 15)
+scale = Vector2(0.296875, 0.296875)
 texture = ExtResource("3_ktd5u")
 
 [node name="NPC2Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=701058802]
-position = Vector2(859, 0)
+position = Vector2(196, 15.000002)
+scale = Vector2(0.34375, 0.34375)
 texture = ExtResource("3_ktd5u")

@@ -21,11 +21,10 @@ size = Vector2(92, 680)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=661865839]
 position = Vector2(515, -85.00001)
-scale = Vector2(5, 5)
 texture = ExtResource("1_yniib")
 
 [node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_uq06h")]
-disable_mode = 0
+position = Vector2(465, -60)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1731769128]
 visible = false

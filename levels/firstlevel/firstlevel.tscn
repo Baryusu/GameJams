@@ -14,24 +14,25 @@ metadata/_edit_horizontal_guides_ = [-180.0]
 [node name="Guard2" parent="." unique_id=1311989888 instance=ExtResource("1_7fs41")]
 
 [node name="Floor" parent="." unique_id=1488798935 instance=ExtResource("2_li6o6")]
-position = Vector2(-1, 106)
+position = Vector2(9, 65)
 
 [node name="Floor2" parent="." unique_id=2020502240 instance=ExtResource("2_li6o6")]
-position = Vector2(1117, 106)
+position = Vector2(843, 62)
 
 [node name="Floor3" parent="." unique_id=1952332093 instance=ExtResource("2_li6o6")]
-position = Vector2(2241, 106)
+position = Vector2(1676, 62)
 
 [node name="Npc" parent="." unique_id=1603411725 instance=ExtResource("3_mp832")]
-position = Vector2(1522, -5)
+position = Vector2(957, -67)
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=787435998]
-position = Vector2(-396, 135)
+position = Vector2(-183, -33)
 
 [node name="Wall" type="Node2D" parent="." unique_id=841357976]
 
 [node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=1716262844]
-position = Vector2(566, -152)
+position = Vector2(336, -84.25)
+scale = Vector2(0.59792286, 0.59792286)
 texture = ExtResource("3_ikril")
 
 [node name="Door" parent="Wall" unique_id=2026830631 instance=ExtResource("4_ikril")]
@@ -64,3 +65,4 @@ note_text = "dheuidiwdhw wejbfhiwbfiuw jewhdjiwhefiuwef idhwheofhwof deuiwefhwif
 
 [node name="Guard1" parent="." unique_id=287311105 instance=ExtResource("7_1oiqy")]
 position = Vector2(-258, -1)
+scale = Vector2(1, 1)

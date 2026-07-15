@@ -21,19 +21,17 @@ size = Vector2(92, 680)
 position = Vector2(819, -77)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=2039981314]
-position = Vector2(330, 0)
-scale = Vector2(5, 5)
+position = Vector2(-677, 11)
 texture = ExtResource("1_mnoif")
 
 [node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_51lbq")]
-position = Vector2(1735, 0)
+position = Vector2(261, -41)
 
 [node name="Walls" type="Node2D" parent="." unique_id=418854276]
-visible = false
 position = Vector2(468, 0)
 
 [node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=2065762416]
-position = Vector2(-67, 0)
+position = Vector2(-543, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1430216597]
 position = Vector2(0, -96.000015)
@@ -41,7 +39,7 @@ scale = Vector2(6.81, 6.81)
 shape = SubResource("RectangleShape2D_rgccv")
 
 [node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=1387603610]
-position = Vector2(531, -363)
+position = Vector2(-305, -401)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=1127611840]
 position = Vector2(117.5, 273.00003)
@@ -49,14 +47,14 @@ scale = Vector2(6.705, 6.705)
 shape = SubResource("RectangleShape2D_qmf6w")
 
 [node name="Floor" type="StaticBody2D" parent="Walls" unique_id=1342227433]
-position = Vector2(175, 317)
+position = Vector2(-407, 126)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=1079998821]
 position = Vector2(502.5, -67)
 shape = SubResource("RectangleShape2D_0klys")
 
 [node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=1347547963]
-position = Vector2(1414, 0)
+position = Vector2(-147, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=2110392079]
 position = Vector2(10, -92)

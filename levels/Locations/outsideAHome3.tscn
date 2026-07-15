@@ -22,8 +22,7 @@ size = Vector2(92, 680)
 position = Vector2(1202, -77)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=480041413]
-position = Vector2(330, 0)
-scale = Vector2(5, 5)
+position = Vector2(-870, 82)
 texture = ExtResource("1_l6w88")
 
 [node name="Items" type="Node2D" parent="." unique_id=27235428]
@@ -33,10 +32,11 @@ position = Vector2(1639, 0)
 texture = ExtResource("2_xxg70")
 
 [node name="Walls" type="Node2D" parent="." unique_id=832617023]
-visible = false
+position = Vector2(-368, 0)
+scale = Vector2(0.5, 0.5)
 
 [node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1733173777]
-position = Vector2(-170, 0)
+position = Vector2(676, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1613153935]
 position = Vector2(0, -96.000015)
@@ -44,7 +44,7 @@ scale = Vector2(6.81, 6.81)
 shape = SubResource("RectangleShape2D_7eorc")
 
 [node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=418730710]
-position = Vector2(380, -420)
+position = Vector2(380, -330)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=58097778]
 position = Vector2(1159, 273)
@@ -59,11 +59,11 @@ position = Vector2(1573, -67)
 shape = SubResource("RectangleShape2D_veira")
 
 [node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=292205320]
-position = Vector2(3213, 0)
+position = Vector2(2092, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=42486285]
 position = Vector2(10, -92)
 shape = SubResource("RectangleShape2D_ye2eb")
 
 [node name="player" parent="." unique_id=1699463660 instance=ExtResource("3_xxg70")]
-position = Vector2(2683, 0)
+position = Vector2(537, 26)

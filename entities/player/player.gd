@@ -3,7 +3,7 @@ class_name Player
 
 @onready var anim = $AnimatedSprite2D
 
-const SPEED = 3000.0
+const SPEED = 150.0
 
 var has_moved: bool = false
 
