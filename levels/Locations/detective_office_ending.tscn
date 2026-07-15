@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://du0auc2xn27qr"]
+
+[ext_resource type="Texture2D" uid="uid://dj7dxnwcol7cw" path="res://assets/art/Locations/detective_office.png" id="1_7qnss"]
+[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_n8jeh"]
+[ext_resource type="Texture2D" uid="uid://c85ehxscfuask" path="res://icon.svg" id="3_n8jeh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpvfr"]
+size = Vector2(20, 99.853165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n58d"]
+size = Vector2(226.54738, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wb763"]
+size = Vector2(1419, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fi157"]
+size = Vector2(92, 680)
+
+[node name="DetectiveOffice" type="Node2D" unique_id=418652135]
+
+[node name="Sprite" type="Node2D" parent="." unique_id=1784020930]
+position = Vector2(692, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=135874641]
+scale = Vector2(5, 5)
+texture = ExtResource("1_7qnss")
+
+[node name="Walls" type="Node2D" parent="." unique_id=1073287975]
+visible = false
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1314933828]
+position = Vector2(-67, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=285994145]
+position = Vector2(0, -96.000015)
+scale = Vector2(6.81, 6.81)
+shape = SubResource("RectangleShape2D_lpvfr")
+
+[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=1350272179]
+position = Vector2(531, -363)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=526177577]
+position = Vector2(117.5, 273.00003)
+scale = Vector2(6.705, 6.705)
+shape = SubResource("RectangleShape2D_1n58d")
+
+[node name="Floor" type="StaticBody2D" parent="Walls" unique_id=751468872]
+position = Vector2(175, 317)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=645504860]
+position = Vector2(502.5, -67)
+shape = SubResource("RectangleShape2D_wb763")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=365964265]
+position = Vector2(1414, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1665781405]
+position = Vector2(10, -92)
+shape = SubResource("RectangleShape2D_fi157")
+
+[node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_n8jeh")]
+position = Vector2(857, 100)
+
+[node name="NPC\'s" type="Node2D" parent="." unique_id=1150064626]
+
+[node name="NPC1Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=1737778779]
+position = Vector2(1304, 105)
+texture = ExtResource("3_n8jeh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=216146564]
+position = Vector2(693, 23)
+zoom = Vector2(0.834, 0.834)

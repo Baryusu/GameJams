@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cfaj6882wh23n"]
+
+[ext_resource type="Texture2D" uid="uid://cifxyobmpw4a8" path="res://assets/art/Locations/aurora_house.png" id="1_vij41"]
+[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_q2xgv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vij41"]
+size = Vector2(20, 99.853165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2xgv"]
+size = Vector2(226.54738, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qopjm"]
+size = Vector2(1419, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxoyt"]
+size = Vector2(92, 680)
+
+[node name="InsideAHome1" type="Node2D" unique_id=1744852878]
+
+[node name="Sprite" type="Node2D" parent="." unique_id=1183588548]
+position = Vector2(692, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=1464701241]
+scale = Vector2(5, 5)
+texture = ExtResource("1_vij41")
+
+[node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_q2xgv")]
+position = Vector2(75, 112)
+
+[node name="NPC\'s" type="Node2D" parent="." unique_id=1561991164]
+
+[node name="Walls" type="Node2D" parent="." unique_id=1359864634]
+visible = false
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1860252741]
+position = Vector2(-67, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=865620614]
+position = Vector2(0, -96.000015)
+scale = Vector2(6.81, 6.81)
+shape = SubResource("RectangleShape2D_vij41")
+
+[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=1477581659]
+position = Vector2(531, -363)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=915378078]
+position = Vector2(117.5, 273.00003)
+scale = Vector2(6.705, 6.705)
+shape = SubResource("RectangleShape2D_q2xgv")
+
+[node name="Floor" type="StaticBody2D" parent="Walls" unique_id=71605636]
+position = Vector2(175, 317)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=1574113648]
+position = Vector2(502.5, -67)
+shape = SubResource("RectangleShape2D_qopjm")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=1297602724]
+position = Vector2(1414, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=443079477]
+position = Vector2(10, -92)
+shape = SubResource("RectangleShape2D_sxoyt")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2140384520]
+position = Vector2(693, 2)
+zoom = Vector2(0.834, 0.834)

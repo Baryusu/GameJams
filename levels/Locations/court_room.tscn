@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://b7sxytk8dyb55"]
+
+[ext_resource type="Texture2D" uid="uid://ckd1h3ulc52ko" path="res://assets/art/Locations/courtroom.png" id="1_u5raw"]
+[ext_resource type="Texture2D" uid="uid://c85ehxscfuask" path="res://icon.svg" id="2_kfetl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5raw"]
+size = Vector2(20, 99.853165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfetl"]
+size = Vector2(324.534, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k81wc"]
+size = Vector2(2105, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44foq"]
+size = Vector2(92, 680)
+
+[node name="CourtRoom" type="Node2D" unique_id=1750378190]
+
+[node name="Sprite" type="Node2D" parent="." unique_id=799710563]
+position = Vector2(706, -77)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=783588322]
+position = Vector2(330, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("1_u5raw")
+
+[node name="Walls" type="Node2D" parent="." unique_id=195740252]
+visible = false
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=473724687]
+position = Vector2(-67, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=571758328]
+position = Vector2(0, -96.000015)
+scale = Vector2(6.81, 6.81)
+shape = SubResource("RectangleShape2D_u5raw")
+
+[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=479320941]
+position = Vector2(578, -698)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=533355726]
+position = Vector2(445.99994, 273.00003)
+scale = Vector2(6.705, 6.705)
+shape = SubResource("RectangleShape2D_kfetl")
+
+[node name="Floor" type="StaticBody2D" parent="Walls" unique_id=510686749]
+position = Vector2(175, 317)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=1489091602]
+position = Vector2(845.5, -143)
+shape = SubResource("RectangleShape2D_k81wc")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=407102070]
+position = Vector2(2097, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1798624758]
+position = Vector2(10, -92)
+shape = SubResource("RectangleShape2D_44foq")
+
+[node name="NPC\'s" type="Node2D" parent="." unique_id=1596333654]
+
+[node name="NPC1Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=2016419064]
+position = Vector2(404, -105)
+texture = ExtResource("2_kfetl")
+
+[node name="NPC2Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=495968515]
+position = Vector2(1607, -105)
+texture = ExtResource("2_kfetl")

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://d23cu4pq28e62"]
+
+[ext_resource type="Texture2D" uid="uid://dodoi2ig7m8lh" path="res://assets/art/Locations/aurora_outside.png" id="1_yy0ei"]
+[ext_resource type="Texture2D" uid="uid://c85ehxscfuask" path="res://icon.svg" id="2_eatd8"]
+[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="3_eatd8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb7mp"]
+size = Vector2(20, 99.853165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1s18"]
+size = Vector2(537.06195, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icwj2"]
+size = Vector2(3551, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fho7g"]
+size = Vector2(92, 680)
+
+[node name="OutsideAuroraHome" type="Node2D" unique_id=624279283]
+
+[node name="Sprite" type="Node2D" parent="." unique_id=428387258]
+position = Vector2(1202, -77)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=200647165]
+position = Vector2(330, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("1_yy0ei")
+
+[node name="NPC\'s" type="Node2D" parent="." unique_id=1037771077]
+
+[node name="NPC1Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=2011492439]
+position = Vector2(1017, 0)
+texture = ExtResource("2_eatd8")
+
+[node name="NPC2Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=1340532791]
+position = Vector2(1625, 0)
+texture = ExtResource("2_eatd8")
+
+[node name="NPC3Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=1371214665]
+position = Vector2(2343, 0)
+texture = ExtResource("2_eatd8")
+
+[node name="Walls" type="Node2D" parent="." unique_id=1459261294]
+visible = false
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=161576412]
+position = Vector2(-170, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1962386364]
+position = Vector2(0, -96.000015)
+scale = Vector2(6.81, 6.81)
+shape = SubResource("RectangleShape2D_sb7mp")
+
+[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=410932229]
+position = Vector2(380, -420)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=1067588928]
+position = Vector2(1159, 273)
+scale = Vector2(6.705, 6.705)
+shape = SubResource("RectangleShape2D_p1s18")
+
+[node name="Floor" type="StaticBody2D" parent="Walls" unique_id=2048890788]
+position = Vector2(0, 249)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=291765206]
+position = Vector2(1573, -67)
+shape = SubResource("RectangleShape2D_icwj2")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=567758291]
+position = Vector2(3213, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=421654732]
+position = Vector2(10, -92)
+shape = SubResource("RectangleShape2D_fho7g")
+
+[node name="player" parent="." unique_id=1699463660 instance=ExtResource("3_eatd8")]

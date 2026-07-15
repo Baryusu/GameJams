@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dy15nbvq6bsjb"]
+
+[ext_resource type="Texture2D" uid="uid://dj7dxnwcol7cw" path="res://assets/art/Locations/detective_office.png" id="1_yniib"]
+[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_uq06h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(20, 99.853165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(226.54738, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(1419, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gngh"]
+size = Vector2(92, 680)
+
+[node name="DetectiveOffice" type="Node2D" unique_id=1657442091]
+
+[node name="Sprite" type="Node2D" parent="." unique_id=1882768489]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=661865839]
+position = Vector2(515, -85.00001)
+scale = Vector2(5, 5)
+texture = ExtResource("1_yniib")
+
+[node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_uq06h")]
+disable_mode = 0
+
+[node name="Walls" type="Node2D" parent="." unique_id=1731769128]
+visible = false
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=17803408]
+position = Vector2(-234, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1944847351]
+position = Vector2(0, -96.000015)
+scale = Vector2(6.81, 6.81)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=1782989403]
+position = Vector2(380, -459)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=1700897112]
+position = Vector2(117.5, 273.00003)
+scale = Vector2(6.705, 6.705)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Floor" type="StaticBody2D" parent="Walls" unique_id=447293978]
+position = Vector2(0, 249)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=282372062]
+position = Vector2(502.5, -67)
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=565835182]
+position = Vector2(1236, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1852818827]
+position = Vector2(10, -92)
+shape = SubResource("RectangleShape2D_3gngh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=723971730]
+position = Vector2(518, -68)
+zoom = Vector2(0.825, 0.825)
