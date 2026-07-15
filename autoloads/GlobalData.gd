@@ -9,3 +9,5 @@ var collected_item_ids: Array = []
 var journal: Array = []
 
 var collected_page_ids: Array = []
+
+var spoke_to_parents: bool = false

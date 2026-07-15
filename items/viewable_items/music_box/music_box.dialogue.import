@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dn0upj4nm0p0y"
+path="res://.godot/imported/music_box.dialogue-dddfaaf59d2bc9fe43f3253faa26af1a.tres"
+
+[deps]
+
+source_file="res://items/viewable_items/music_box/music_box.dialogue"
+dest_files=["res://.godot/imported/music_box.dialogue-dddfaaf59d2bc9fe43f3253faa26af1a.tres"]
+
+[params]
+
+defaults=true

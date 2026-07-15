@@ -2,6 +2,7 @@ extends Area2D
 @export_file("*.tscn") var target_scene: String
 @export var target_spawn_point: String = "SpawnPoint"
 var showInteractionLabel:= false
+@export var needs_parent_interview: bool = false
 
 func _process(_delta):
 	$Label.visible = showInteractionLabel
@@ -17,6 +18,10 @@ func _on_body_exited(body: Node2D) -> void:
 	if body is Player: showInteractionLabel = false
 	
 func transition_scene() -> void:
+	if needs_parent_interview == true and GlobalData.spoke_to_parents == false:
+		print("The door is locked! Talk to the parents first.")
+		return # This stops the rest of the code from running!
+		
 	if target_scene == "":
 		print("No door available")
 	else:

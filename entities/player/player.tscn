@@ -108,18 +108,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(42, 40)
+size = Vector2(28, 37)
 
 [node name="player" type="CharacterBody2D" unique_id=1699463660]
 script = ExtResource("1_abrql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=323771873]
+scale = Vector2(1.45, 1.45)
 sprite_frames = SubResource("SpriteFrames_allqr")
 animation = &"enter_door"
 frame = 2
 frame_progress = 0.4060475
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1164789131]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=531151119]

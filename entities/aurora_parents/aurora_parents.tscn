@@ -27,27 +27,29 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ecejl"]
-radius = 77.10383
+radius = 26.076809
 
 [node name="AuroraParents" type="Area2D" unique_id=1563680059]
 script = ExtResource("1_0cjnx")
 dialogue_resource = ExtResource("2_fsw7p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1375492914]
-scale = Vector2(3, 3)
+scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_la03u")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.84097725
+frame_progress = 0.73079515
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1490398256]
 shape = SubResource("CircleShape2D_ecejl")
 
 [node name="Label" type="Label" parent="." unique_id=1018712160]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -37.0
+offset_top = -39.0
+offset_right = 38.0
+offset_bottom = -16.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 14
 text = "[E] Interact"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

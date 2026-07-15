@@ -1,22 +1,15 @@
 [gd_scene format=3 uid="uid://ctpyu5w17rrg7"]
 
 [ext_resource type="Texture2D" uid="uid://dodoi2ig7m8lh" path="res://assets/art/Locations/aurora_outside.png" id="1_3wp6f"]
-[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_6ayoa"]
-[ext_resource type="Texture2D" uid="uid://c85ehxscfuask" path="res://icon.svg" id="3_6ayoa"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wp6f"]
-size = Vector2(20, 99.853165)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ayoa"]
-size = Vector2(102.61, 2.0879993)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2ra3"]
-size = Vector2(702, 31)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbkt0"]
-size = Vector2(92, 680)
+[ext_resource type="Script" uid="uid://c7ss3w6f4ooj6" path="res://levels/Locations/camera_boundaries.gd" id="1_6ayoa"]
+[ext_resource type="Resource" uid="uid://cq4fquegoc57f" path="res://entities/player/player.dialogue" id="2_u2ra3"]
+[ext_resource type="PackedScene" uid="uid://bp74ss8u4mwqc" path="res://entities/aurora_parents/aurora_parents.tscn" id="3_6ayoa"]
+[ext_resource type="PackedScene" uid="uid://c1o4nyfwrbp45" path="res://levels/props/door/door.tscn" id="5_nbkt0"]
 
 [node name="OutsideAuroraHome" type="Node2D" unique_id=518369344]
+script = ExtResource("1_6ayoa")
+dialogue_file = ExtResource("2_u2ra3")
+dialogue_title = "~ start"
 
 [node name="Sprite" type="Node2D" parent="." unique_id=658389818]
 position = Vector2(-117, -20)
@@ -25,45 +18,33 @@ position = Vector2(-117, -20)
 position = Vector2(112, -15)
 texture = ExtResource("1_3wp6f")
 
-[node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_6ayoa")]
-position = Vector2(-281, -10)
-
-[node name="Walls" type="Node2D" parent="." unique_id=207208779]
-position = Vector2(-1619, -19)
-
-[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1564796419]
-position = Vector2(-170, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=821388279]
-position = Vector2(1389, 15)
-scale = Vector2(6.81, 6.81)
-shape = SubResource("RectangleShape2D_3wp6f")
-
-[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=871394569]
-position = Vector2(380, -420)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=567560979]
-position = Vector2(1251, 399.99997)
-scale = Vector2(6.705, 6.705)
-shape = SubResource("RectangleShape2D_6ayoa")
-
-[node name="Floor" type="StaticBody2D" parent="Walls" unique_id=851247130]
-position = Vector2(0, 249)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=333485560]
-position = Vector2(1629, -204)
-shape = SubResource("RectangleShape2D_u2ra3")
-
-[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=1723395504]
-position = Vector2(3213, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1521828607]
-position = Vector2(-1226, -65)
-shape = SubResource("RectangleShape2D_nbkt0")
-
 [node name="NPC\'s" type="Node2D" parent="." unique_id=1167699933]
 
-[node name="ParentPlaceholder" type="Sprite2D" parent="NPC\'s" unique_id=62218615]
-position = Vector2(-217.00003, -18)
-scale = Vector2(0.22656205, 0.21875004)
-texture = ExtResource("3_6ayoa")
+[node name="AuroraParents" parent="NPC\'s" unique_id=1563680059 instance=ExtResource("3_6ayoa")]
+position = Vector2(-182, -7)
+
+[node name="Node" type="Node" parent="." unique_id=1977591605]
+
+[node name="Area2D" type="StaticBody2D" parent="Node" unique_id=355596408]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node/Area2D" unique_id=28998472]
+build_mode = 1
+polygon = PackedVector2Array(-333, 25, -333, -96, 323, -96, 323, 25)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Node/Area2D" unique_id=1386616408]
+build_mode = 1
+polygon = PackedVector2Array(323, -35, -333, -37, -333, -96, 323, -96)
+
+[node name="CameraBoundaries" type="ReferenceRect" parent="." unique_id=856273598]
+offset_left = -333.0
+offset_top = -96.0
+offset_right = 323.0
+offset_bottom = 25.0
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=739738676]
+position = Vector2(-322, -17)
+
+[node name="Door" parent="." unique_id=2026830631 instance=ExtResource("5_nbkt0")]
+position = Vector2(-276, -23)
+target_scene = "uid://cfaj6882wh23n"
+needs_parent_interview = true

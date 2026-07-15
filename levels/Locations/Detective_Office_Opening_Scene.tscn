@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dy15nbvq6bsjb"]
 
+[ext_resource type="Script" uid="uid://c7ss3w6f4ooj6" path="res://levels/Locations/camera_boundaries.gd" id="1_uq06h"]
 [ext_resource type="Texture2D" uid="uid://dj7dxnwcol7cw" path="res://assets/art/Locations/detective_office.png" id="1_yniib"]
-[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_uq06h"]
+[ext_resource type="PackedScene" uid="uid://c1o4nyfwrbp45" path="res://levels/props/door/door.tscn" id="3_uq06h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(20, 99.853165)
@@ -16,15 +17,13 @@ size = Vector2(1419, 154)
 size = Vector2(92, 680)
 
 [node name="DetectiveOffice" type="Node2D" unique_id=1657442091]
+script = ExtResource("1_uq06h")
 
 [node name="Sprite" type="Node2D" parent="." unique_id=1882768489]
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=661865839]
 position = Vector2(515, -85.00001)
 texture = ExtResource("1_yniib")
-
-[node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_uq06h")]
-position = Vector2(465, -60)
 
 [node name="Walls" type="Node2D" parent="." unique_id=1731769128]
 visible = false
@@ -59,6 +58,27 @@ position = Vector2(1236, 0)
 position = Vector2(10, -92)
 shape = SubResource("RectangleShape2D_3gngh")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=723971730]
-position = Vector2(518, -68)
-zoom = Vector2(0.825, 0.825)
+[node name="CameraBoundaries" type="ReferenceRect" parent="." unique_id=593974932]
+offset_left = 377.0
+offset_top = -147.0
+offset_right = 653.0
+offset_bottom = -23.0
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=2057466589]
+position = Vector2(497, -56)
+
+[node name="Boundaries" type="Node" parent="." unique_id=508713440]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries" unique_id=127107077]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundaries/StaticBody2D" unique_id=1118751521]
+build_mode = 1
+polygon = PackedVector2Array(377, -24, 377, -86.67203, 377, -147, 653, -147, 653, -91.39048, 653, -23, 377, -23)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Boundaries/StaticBody2D" unique_id=1158293810]
+build_mode = 1
+polygon = PackedVector2Array(653, -90, 377, -90, 377, -147, 653, -147)
+
+[node name="Door" parent="." unique_id=2026830631 instance=ExtResource("3_uq06h")]
+position = Vector2(649, -54)
+target_scene = "uid://ctpyu5w17rrg7"

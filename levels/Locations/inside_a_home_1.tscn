@@ -1,21 +1,12 @@
 [gd_scene format=3 uid="uid://cfaj6882wh23n"]
 
+[ext_resource type="Script" uid="uid://c7ss3w6f4ooj6" path="res://levels/Locations/camera_boundaries.gd" id="1_q2xgv"]
 [ext_resource type="Texture2D" uid="uid://cifxyobmpw4a8" path="res://assets/art/Locations/aurora_house.png" id="1_vij41"]
-[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_q2xgv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vij41"]
-size = Vector2(20, 99.853165)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2xgv"]
-size = Vector2(226.54738, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qopjm"]
-size = Vector2(1419, 154)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxoyt"]
-size = Vector2(92, 680)
+[ext_resource type="PackedScene" uid="uid://dbopept837dvn" path="res://items/viewable_items/music_box/music_box.tscn" id="3_qopjm"]
+[ext_resource type="Resource" uid="uid://dn0upj4nm0p0y" path="res://items/viewable_items/music_box/music_box.dialogue" id="4_sxoyt"]
 
 [node name="InsideAHome1" type="Node2D" unique_id=1744852878]
+script = ExtResource("1_q2xgv")
 
 [node name="Sprite" type="Node2D" parent="." unique_id=1183588548]
 position = Vector2(692, 0)
@@ -24,43 +15,33 @@ position = Vector2(692, 0)
 position = Vector2(-542, 0)
 texture = ExtResource("1_vij41")
 
-[node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_q2xgv")]
-position = Vector2(269, 17)
-
 [node name="NPC\'s" type="Node2D" parent="." unique_id=1561991164]
 
-[node name="Walls" type="Node2D" parent="." unique_id=1359864634]
+[node name="CameraBoundaries" type="ReferenceRect" parent="." unique_id=1800791547]
+offset_left = 13.0
+offset_top = -62.0
+offset_right = 288.0
+offset_bottom = 62.0
 
-[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1860252741]
-position = Vector2(-55, 0)
+[node name="Boundaries" type="Node" parent="." unique_id=306040745]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=865620614]
-position = Vector2(0, -96.000015)
-scale = Vector2(6.81, 6.81)
-shape = SubResource("RectangleShape2D_vij41")
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries" unique_id=2080534276]
 
-[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=1477581659]
-position = Vector2(531, -341)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundaries/StaticBody2D" unique_id=818034551]
+position = Vector2(40, 40)
+build_mode = 1
+polygon = PackedVector2Array(-27, 22, -27, -102, 248, -102, 248, 22)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=915378078]
-position = Vector2(117.5, 273.00003)
-scale = Vector2(6.705, 6.705)
-shape = SubResource("RectangleShape2D_q2xgv")
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Boundaries/StaticBody2D" unique_id=1985921175]
+position = Vector2(40, 40)
+build_mode = 1
+polygon = PackedVector2Array(248, -44, -27, -44, -27, -102, 248, -102)
 
-[node name="Floor" type="StaticBody2D" parent="Walls" unique_id=71605636]
-position = Vector2(175, 190)
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=2140371204]
+position = Vector2(268, 14)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=1574113648]
-position = Vector2(502.5, -67)
-shape = SubResource("RectangleShape2D_qopjm")
+[node name="Node" type="Node" parent="." unique_id=527214889]
 
-[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=1297602724]
-position = Vector2(323, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=443079477]
-position = Vector2(10, -92)
-shape = SubResource("RectangleShape2D_sxoyt")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2140384520]
-position = Vector2(693, 2)
-zoom = Vector2(0.834, 0.834)
+[node name="MusicBox" parent="Node" unique_id=713348378 instance=ExtResource("3_qopjm")]
+position = Vector2(219, 1)
+dialogue_resource = ExtResource("4_sxoyt")

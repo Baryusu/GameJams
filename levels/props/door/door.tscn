@@ -1,25 +1,23 @@
 [gd_scene format=3 uid="uid://c1o4nyfwrbp45"]
 
-[ext_resource type="Texture2D" uid="uid://f16pr7d83gnb" path="res://assets/art/door.png" id="1_5kqw8"]
 [ext_resource type="Script" uid="uid://d0u15410obh1o" path="res://levels/props/door/door.gd" id="1_cx50v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(188, 206)
+size = Vector2(20.75, 32)
 
 [node name="Door" type="Area2D" unique_id=2026830631]
 script = ExtResource("1_cx50v")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=14664481]
-texture = ExtResource("1_5kqw8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=798471885]
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Label" type="Label" parent="." unique_id=245324446]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -37.0
+offset_top = -35.0
+offset_right = 90.0
+offset_bottom = -1.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 14
 text = "[E] Interact"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

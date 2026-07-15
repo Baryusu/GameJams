@@ -1,6 +1,6 @@
 ~ start
 Leah: It all happened while we were asleep… We didn’t hear anything, and when we woke up our baby wasn’t there anymore! *sobs*
 
-Rivera to himself: (talks to himself) No forced entry, that’s weird… If I need more information, Aurora’s parents are just here. Time to start my investigations…
-
+Rivera: (talks to himself) No forced entry, that’s weird… If I need more information, Aurora’s parents are just here. Time to start my investigations…
+set GlobalData.spoke_to_parents = true
 => END
