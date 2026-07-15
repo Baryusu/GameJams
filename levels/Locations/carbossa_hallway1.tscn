@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dfl8m6ndhfrge"]
+
+[ext_resource type="Texture2D" uid="uid://bcqede4g2fm4j" path="res://assets/art/Locations/carabosse_inside.png" id="1_abpls"]
+[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_cvcpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abpls"]
+size = Vector2(20, 99.853165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvcpy"]
+size = Vector2(460.10446, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30ooq"]
+size = Vector2(2984, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjb6m"]
+size = Vector2(92, 680)
+
+[node name="CarbossaHallway" type="Node2D" unique_id=417897867]
+
+[node name="Sprite" type="Node2D" parent="." unique_id=1768563869]
+position = Vector2(819, -77)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=1409858623]
+position = Vector2(330, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("1_abpls")
+
+[node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_cvcpy")]
+position = Vector2(2475, 0)
+
+[node name="Walls" type="Node2D" parent="." unique_id=446869066]
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1283370759]
+position = Vector2(-374, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1078721984]
+position = Vector2(0, -96.000015)
+scale = Vector2(6.81, 6.81)
+shape = SubResource("RectangleShape2D_abpls")
+
+[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=1947165296]
+position = Vector2(531, -416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=1941379479]
+position = Vector2(652.5001, 273.00003)
+scale = Vector2(6.705, 6.705)
+shape = SubResource("RectangleShape2D_cvcpy")
+
+[node name="Floor" type="StaticBody2D" parent="Walls" unique_id=1184875742]
+position = Vector2(175, 317)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=2007675191]
+position = Vector2(982, -163)
+shape = SubResource("RectangleShape2D_30ooq")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=898997490]
+position = Vector2(2658, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1735789781]
+position = Vector2(10, -92)
+shape = SubResource("RectangleShape2D_yjb6m")

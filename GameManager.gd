@@ -10,6 +10,6 @@ func start_game():
 	get_tree().current_scene = gameplay_instance
 
 func exit_to_menu():
-	var menu = load("res://scenes/MainMenu.tscn").instantiate()
+	var menu = load("res://ui/MainMenu/main_menu.tscn").instantiate()
 	get_tree().root.add_child(menu)
 	get_tree().current_scene = menu

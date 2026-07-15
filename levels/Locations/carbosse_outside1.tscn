@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://xmpyg87nv0pa"]
+
+[ext_resource type="Texture2D" uid="uid://4dif0v732ofd" path="res://assets/art/Locations/caraboosse_outside.png" id="1_1tuvx"]
+[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_r5f8m"]
+[ext_resource type="Texture2D" uid="uid://c85ehxscfuask" path="res://icon.svg" id="3_ktd5u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5f8m"]
+size = Vector2(20, 99.853165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktd5u"]
+size = Vector2(362.26703, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvr41"]
+size = Vector2(2350, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7aym"]
+size = Vector2(92, 680)
+
+[node name="CarbosseOutside" type="Node2D" unique_id=544207603]
+
+[node name="Sprite" type="Node2D" parent="." unique_id=1587628220]
+position = Vector2(819, -77)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite" unique_id=267058537]
+position = Vector2(330, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("1_1tuvx")
+
+[node name="player" parent="." unique_id=1699463660 instance=ExtResource("2_r5f8m")]
+position = Vector2(2193, 0)
+
+[node name="Walls" type="Node2D" parent="." unique_id=1224628955]
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=686868000]
+position = Vector2(-67, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=680571461]
+position = Vector2(0, -96.000015)
+scale = Vector2(6.81, 6.81)
+shape = SubResource("RectangleShape2D_r5f8m")
+
+[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=1302487878]
+position = Vector2(531, -416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=600302741]
+position = Vector2(572.5, 273.00003)
+scale = Vector2(6.705, 6.705)
+shape = SubResource("RectangleShape2D_ktd5u")
+
+[node name="Floor" type="StaticBody2D" parent="Walls" unique_id=736500877]
+position = Vector2(175, 317)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=2042692623]
+position = Vector2(968, -143)
+shape = SubResource("RectangleShape2D_tvr41")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=1034151853]
+position = Vector2(2326, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=940418006]
+position = Vector2(10, -92)
+shape = SubResource("RectangleShape2D_l7aym")
+
+[node name="NPC\'s" type="Node2D" parent="." unique_id=523154592]
+
+[node name="NPC1Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=592790930]
+position = Vector2(385, 0)
+texture = ExtResource("3_ktd5u")
+
+[node name="NPC2Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=701058802]
+position = Vector2(859, 0)
+texture = ExtResource("3_ktd5u")

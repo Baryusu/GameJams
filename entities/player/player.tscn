@@ -18,6 +18,7 @@ animations = [{
 size = Vector2(128, 126)
 
 [node name="player" type="CharacterBody2D" unique_id=1699463660]
+disable_mode = 2
 script = ExtResource("1_abrql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=323771873]
