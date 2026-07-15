@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bphag4k6kwf2a"
+path="res://.godot/imported/prosecutor.dialogue-76fbab0b66676f9f35a9d754f70f92e5.tres"
+
+[deps]
+
+source_file="res://entities/prosecutor/prosecutor.dialogue"
+dest_files=["res://.godot/imported/prosecutor.dialogue-76fbab0b66676f9f35a9d754f70f92e5.tres"]
+
+[params]
+
+defaults=true

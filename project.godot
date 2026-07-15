@@ -82,7 +82,7 @@ toggle_journal={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/steve.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/steve.dialogue", "res://entities/aurora/aurora.dialogue", "res://entities/aurora_parents/aurora_parents.dialogue", "res://entities/receptionist_officer/receptionist_officer.dialogue", "res://entities/guards/guard1.dialogue", "res://entities/officer/officer.dialogue", "res://entities/prosecutor/prosecutor.dialogue", "res://entities/mother_and_son/mother_and_son.dialogue", "res://entities/bystander/bystander.dialogue")
 
 [physics]
 

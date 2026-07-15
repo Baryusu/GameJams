@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bp74ss8u4mwqc"]
+
+[ext_resource type="Script" uid="uid://d0tmo54y61wgu" path="res://entities/aurora_parents/aurora_parents.gd" id="1_0cjnx"]
+[ext_resource type="Texture2D" uid="uid://dqrh88cinqfml" path="res://entities/aurora_parents/aurora_parents_front_idle.png" id="1_82yeq"]
+[ext_resource type="Resource" uid="uid://bq6e5wrhx1qvi" path="res://entities/aurora_parents/aurora_parents.dialogue" id="2_fsw7p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cjnx"]
+atlas = ExtResource("1_82yeq")
+region = Rect2(0, 0, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsw7p"]
+atlas = ExtResource("1_82yeq")
+region = Rect2(25, 0, 25, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_la03u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cjnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsw7p")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ecejl"]
+radius = 77.10383
+
+[node name="AuroraParents" type="Area2D" unique_id=1563680059]
+script = ExtResource("1_0cjnx")
+dialogue_resource = ExtResource("2_fsw7p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1375492914]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_la03u")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.84097725
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1490398256]
+shape = SubResource("CircleShape2D_ecejl")
+
+[node name="Label" type="Label" parent="." unique_id=1018712160]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "[E] Interact"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

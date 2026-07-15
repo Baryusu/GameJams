@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b82vqkn2m12ny"
+path="res://.godot/imported/mother_and_son.dialogue-a482b9516b0a15f56f737b90043d42cf.tres"
+
+[deps]
+
+source_file="res://entities/mother_and_son/mother_and_son.dialogue"
+dest_files=["res://.godot/imported/mother_and_son.dialogue-a482b9516b0a15f56f737b90043d42cf.tres"]
+
+[params]
+
+defaults=true

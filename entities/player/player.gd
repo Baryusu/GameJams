@@ -1,8 +1,14 @@
 extends CharacterBody2D
 class_name Player
 
+@onready var anim = $AnimatedSprite2D
+
 const SPEED = 3000.0
 
+var has_moved: bool = false
+
+func _ready():
+	anim.play("enter_door")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -24,6 +30,25 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * SPEED
 
 	move_and_slide()
+	
+	if velocity.length() > 0:
+		# The player is currently walking
+		has_moved = true
+		anim.play("walk")
+		
+		# Flip the sprite horizontally based on which way they are walking
+		# If velocity.x is less than 0 (walking left), flip_h becomes true.
+		if velocity.x != 0:
+			anim.flip_h = velocity.x < 0 
+			
+	else:
+		# The player is standing completely still
+		if has_moved:
+			# If they have walked at least once, use side_idle
+			anim.play("idle")
+		else:
+			# If they haven't touched the keys yet, stay in front_idle
+			anim.play("enter_door")
 	
 # --- INVENTORY LOGIC ---
 const MAX_SLOTS: int = 6
@@ -61,4 +86,15 @@ func add_note(title: String, text: String) -> bool:
 	
 	# Return true so the physical paper knows it is safe to delete itself
 	return true
+	
+# Add this anywhere inside player.gd
+func reset_room_state() -> void:
+	# 1. Kill any leftover momentum from the previous room
+	velocity = Vector2.ZERO 
+	
+	# 2. Make the script forget that we ever walked
+	has_moved = false
+	
+	# 3. Force the front idle animation
+	anim.play("enter_door")
 	

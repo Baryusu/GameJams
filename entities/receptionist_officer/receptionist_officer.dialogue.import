@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cfu343ak4luvi"
+path="res://.godot/imported/receptionist_officer.dialogue-d6da584b25693d61256c8d1efffea6c8.tres"
+
+[deps]
+
+source_file="res://entities/receptionist_officer/receptionist_officer.dialogue"
+dest_files=["res://.godot/imported/receptionist_officer.dialogue-d6da584b25693d61256c8d1efffea6c8.tres"]
+
+[params]
+
+defaults=true

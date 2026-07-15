@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dgf4wvy1uxn2h"
+path="res://.godot/imported/bystander.dialogue-a469231a4fef53633e37c58842c0256c.tres"
+
+[deps]
+
+source_file="res://entities/bystander/bystander.dialogue"
+dest_files=["res://.godot/imported/bystander.dialogue-a469231a4fef53633e37c58842c0256c.tres"]
+
+[params]
+
+defaults=true

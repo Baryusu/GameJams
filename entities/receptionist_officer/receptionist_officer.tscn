@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://d1mb8s3geylsx"]
+
+[ext_resource type="Texture2D" uid="uid://ca6v6j23dt64h" path="res://entities/player/detective_front_idle.png" id="1_a5pkq"]
+[ext_resource type="Script" uid="uid://o5jggrpfugre" path="res://entities/receptionist_officer/receptionist_officer.gd" id="1_wmb68"]
+[ext_resource type="Resource" uid="uid://cfu343ak4luvi" path="res://entities/receptionist_officer/receptionist_officer.dialogue" id="2_p80b4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmb68"]
+atlas = ExtResource("1_a5pkq")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p80b4"]
+atlas = ExtResource("1_a5pkq")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npdpw"]
+atlas = ExtResource("1_a5pkq")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n357b"]
+atlas = ExtResource("1_a5pkq")
+region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmb68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p80b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npdpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n357b")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a5pkq"]
+radius = 29.696615
+
+[node name="ReceptionistOfficer" type="Area2D" unique_id=1021844719]
+scale = Vector2(3, 3)
+script = ExtResource("1_wmb68")
+dialogue_resource = ExtResource("2_p80b4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1534488494]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=191514171]
+shape = SubResource("CircleShape2D_a5pkq")
+
+[node name="Label" type="Label" parent="." unique_id=474262341]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "[E] Interact"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

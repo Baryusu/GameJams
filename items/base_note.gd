@@ -18,7 +18,7 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
-func _process(delta):
+func _process(_delta):
 	# Controls the floating text exactly like your items and doors
 	$Label.visible = showInteractionLabel
 	

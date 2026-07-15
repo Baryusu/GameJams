@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bq6e5wrhx1qvi"
+path="res://.godot/imported/aurora_parents.dialogue-be4f53f253b449f6b0e6ed6c5eb18911.tres"
+
+[deps]
+
+source_file="res://entities/aurora_parents/aurora_parents.dialogue"
+dest_files=["res://.godot/imported/aurora_parents.dialogue-be4f53f253b449f6b0e6ed6c5eb18911.tres"]
+
+[params]
+
+defaults=true

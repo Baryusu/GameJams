@@ -3,7 +3,7 @@ extends Area2D
 @export var target_spawn_point: String = "SpawnPoint"
 var showInteractionLabel:= false
 
-func _process(delta):
+func _process(_delta):
 	$Label.visible = showInteractionLabel
 	
 	if showInteractionLabel && Input.is_action_just_pressed("interact"):

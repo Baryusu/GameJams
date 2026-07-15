@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ct0grrgqiq5nw"
+path="res://.godot/imported/aurora.dialogue-8eb22a679854d4a215656bf79567e2e1.tres"
+
+[deps]
+
+source_file="res://entities/aurora/aurora.dialogue"
+dest_files=["res://.godot/imported/aurora.dialogue-8eb22a679854d4a215656bf79567e2e1.tres"]
+
+[params]
+
+defaults=true

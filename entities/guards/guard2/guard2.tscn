@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cg0jnak35p8kp"]
+
+[ext_resource type="Script" uid="uid://cvw3h6q8cr25m" path="res://entities/guards/guard2/guard_2.gd" id="1_ko3ti"]
+[ext_resource type="Resource" uid="uid://57u6wjm1k7ti" path="res://entities/guards/guard1.dialogue" id="2_eq2tq"]
+[ext_resource type="Texture2D" uid="uid://ca6v6j23dt64h" path="res://entities/player/detective_front_idle.png" id="2_x42uw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38hko"]
+atlas = ExtResource("2_x42uw")
+region = Rect2(0, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64l3f"]
+atlas = ExtResource("2_x42uw")
+region = Rect2(16, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qru2o"]
+atlas = ExtResource("2_x42uw")
+region = Rect2(32, 0, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqx37"]
+atlas = ExtResource("2_x42uw")
+region = Rect2(48, 0, 16, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h3sii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38hko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64l3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qru2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqx37")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3m43b"]
+radius = 25.68614
+
+[node name="Guard2" type="Area2D" unique_id=1311989888]
+scale = Vector2(3, 3)
+script = ExtResource("1_ko3ti")
+dialogue_resource = ExtResource("2_eq2tq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=432901198]
+sprite_frames = SubResource("SpriteFrames_h3sii")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1046491885]
+shape = SubResource("CircleShape2D_3m43b")
+
+[node name="Label" type="Label" parent="." unique_id=1639965296]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "[E] Interact"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

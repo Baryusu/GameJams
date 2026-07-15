@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://d2antuqdl506t"]
 
+[ext_resource type="PackedScene" uid="uid://cg0jnak35p8kp" path="res://entities/guards/guard2/guard2.tscn" id="1_7fs41"]
 [ext_resource type="PackedScene" uid="uid://drgecp0fnfarr" path="res://levels/props/floor/floor.tscn" id="2_li6o6"]
 [ext_resource type="Texture2D" uid="uid://ci55lobibf6hp" path="res://assets/art/wall.png" id="3_ikril"]
 [ext_resource type="PackedScene" uid="uid://capishiip6h8c" path="res://entities/npc/npc.tscn" id="3_mp832"]
 [ext_resource type="PackedScene" uid="uid://c1o4nyfwrbp45" path="res://levels/props/door/door.tscn" id="4_ikril"]
 [ext_resource type="PackedScene" uid="uid://b7gcjbjqd1pju" path="res://items/note/note.tscn" id="5_puwrt"]
+[ext_resource type="PackedScene" uid="uid://bqdbtmi37p5a2" path="res://entities/guards/guard1/guard1.tscn" id="7_1oiqy"]
 
 [node name="Firstlevel" type="Node2D" unique_id=1269178636]
 metadata/_edit_horizontal_guides_ = [-180.0]
+
+[node name="Guard2" parent="." unique_id=1311989888 instance=ExtResource("1_7fs41")]
 
 [node name="Floor" parent="." unique_id=1488798935 instance=ExtResource("2_li6o6")]
 position = Vector2(-1, 106)
@@ -22,7 +26,7 @@ position = Vector2(2241, 106)
 position = Vector2(1522, -5)
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=787435998]
-position = Vector2(-384, 130)
+position = Vector2(-396, 135)
 
 [node name="Wall" type="Node2D" parent="." unique_id=841357976]
 
@@ -57,3 +61,6 @@ position = Vector2(282, 94)
 note_id = "note_04"
 note_title = "Testimony 4"
 note_text = "dheuidiwdhw wejbfhiwbfiuw jewhdjiwhefiuwef idhwheofhwof deuiwefhwifw uidhiwe"
+
+[node name="Guard1" parent="." unique_id=287311105 instance=ExtResource("7_1oiqy")]
+position = Vector2(-258, -1)

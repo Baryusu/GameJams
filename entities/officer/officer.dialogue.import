@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dxodasi8lbjbu"
+path="res://.godot/imported/officer.dialogue-2ae3445b07fb32e14ff3334fa3cb3b4b.tres"
+
+[deps]
+
+source_file="res://entities/officer/officer.dialogue"
+dest_files=["res://.godot/imported/officer.dialogue-2ae3445b07fb32e14ff3334fa3cb3b4b.tres"]
+
+[params]
+
+defaults=true
