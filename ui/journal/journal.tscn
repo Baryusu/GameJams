@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cr8ww2dup22qc"]
 
 [ext_resource type="Script" uid="uid://dt43vw2i11ol7" path="res://ui/journal/journal_ui.gd" id="1_8wcqu"]
-[ext_resource type="Texture2D" uid="uid://b1ahnpvgyy3oq" path="res://items/note/notebook_cover.png" id="2_allqr"]
+[ext_resource type="Texture2D" uid="uid://xyi8enwd12oc" path="res://assets/art/ui/journal.png" id="2_8wcqu"]
 
 [node name="journal_ui" type="CanvasLayer" unique_id=2117124576]
 script = ExtResource("1_8wcqu")
@@ -9,38 +9,89 @@ script = ExtResource("1_8wcqu")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=366172370]
 offset_right = 602.0
 offset_bottom = 565.0
-texture = ExtResource("2_allqr")
-
-[node name="LeftPage" type="RichTextLabel" parent="." unique_id=842062681]
-offset_right = 318.0
-offset_bottom = 564.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-fit_content = true
-
-[node name="RightPage" type="RichTextLabel" parent="." unique_id=1961559073]
-offset_left = 336.0
-offset_top = 5.0
-offset_right = 603.0
-offset_bottom = 567.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-fit_content = true
+texture = ExtResource("2_8wcqu")
 
 [node name="PrevButton" type="Label" parent="." unique_id=1781599279]
-offset_left = 26.0
-offset_top = 518.0
-offset_right = 71.0
-offset_bottom = 549.0
+offset_left = 47.0
+offset_top = 452.0
+offset_right = 92.0
+offset_bottom = 483.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Back"
 
 [node name="NextButton" type="Label" parent="." unique_id=1841780496]
-offset_left = 527.0
-offset_top = 515.0
-offset_right = 576.0
-offset_bottom = 546.0
+offset_left = 508.0
+offset_top = 452.0
+offset_right = 557.0
+offset_bottom = 483.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "NEXT"
+
+[node name="Control" type="Control" parent="." unique_id=1341004848]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=518531520]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 564.0
+offset_bottom = 500.0
+
+[node name="Control" type="Control" parent="Control/HBoxContainer" unique_id=1438779144]
+custom_minimum_size = Vector2(270, 300)
+layout_mode = 2
+
+[node name="LeftPageText" type="RichTextLabel" parent="Control/HBoxContainer/Control" unique_id=842062681]
+custom_minimum_size = Vector2(235.58, 408)
+layout_mode = 0
+offset_left = 27.455
+offset_top = 42.645
+offset_right = 263.035
+offset_bottom = 450.645
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder"
+fit_content = true
+
+[node name="Control2" type="Control" parent="Control/HBoxContainer" unique_id=1597501390]
+custom_minimum_size = Vector2(245, 0)
+layout_mode = 2
+
+[node name="RightPageText" type="RichTextLabel" parent="Control/HBoxContainer/Control2" unique_id=1961559073]
+custom_minimum_size = Vector2(235.58, 408)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 43.0
+offset_right = 239.58
+offset_bottom = 451.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+PlaceHolder
+"
+fit_content = true

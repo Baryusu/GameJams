@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c1o4nyfwrbp45" path="res://levels/props/door/door.tscn" id="4_ikril"]
 [ext_resource type="PackedScene" uid="uid://b7gcjbjqd1pju" path="res://items/note/note.tscn" id="5_puwrt"]
 [ext_resource type="PackedScene" uid="uid://bqdbtmi37p5a2" path="res://entities/guards/guard1/guard1.tscn" id="7_1oiqy"]
+[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="8_1oiqy"]
+[ext_resource type="PackedScene" uid="uid://i0k28vborp3c" path="res://ui/HUD/hud.tscn" id="9_7sf4a"]
 
 [node name="Firstlevel" type="Node2D" unique_id=1269178636]
 metadata/_edit_horizontal_guides_ = [-180.0]
@@ -66,3 +68,10 @@ note_text = "dheuidiwdhw wejbfhiwbfiuw jewhdjiwhefiuwef idhwheofhwof deuiwefhwif
 [node name="Guard1" parent="." unique_id=287311105 instance=ExtResource("7_1oiqy")]
 position = Vector2(-258, -1)
 scale = Vector2(1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1074097710]
+position = Vector2(163, 0)
+
+[node name="player" parent="." unique_id=1699463660 instance=ExtResource("8_1oiqy")]
+
+[node name="HUD" parent="." unique_id=1076876402 instance=ExtResource("9_7sf4a")]
