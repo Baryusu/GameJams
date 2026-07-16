@@ -4,6 +4,60 @@
 [ext_resource type="PackedScene" uid="uid://i0k28vborp3c" path="res://ui/HUD/hud.tscn" id="1_wwjgm"]
 [ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="2_lmhhx"]
 [ext_resource type="Script" uid="uid://e7vfd0gie3k6" path="res://ui/PauseMenu/pause_menu.gd" id="3_lmhhx"]
+[ext_resource type="Texture2D" uid="uid://blg1apfm5xcf" path="res://assets/art/ui/Left.png" id="5_4jvq3"]
+[ext_resource type="Texture2D" uid="uid://bf4wuoh4hk28b" path="res://assets/art/ui/Right.png" id="6_sef18"]
+
+[sub_resource type="Animation" id="Animation_4jvq3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/HBoxContainer/Control/TextureRectRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-83, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3cwn3"]
+resource_name = "slide_in_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/HBoxContainer/Control/TextureRectRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.478447, 0), Vector2(-81.21695, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sef18"]
+resource_name = "slide_in_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/HBoxContainer/Control/TextureRectRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-83, 0), Vector2(3.478447, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3cwn3"]
+_data = {
+&"RESET": SubResource("Animation_4jvq3"),
+&"slide_in_left": SubResource("Animation_3cwn3"),
+&"slide_in_right": SubResource("Animation_sef18")
+}
 
 [node name="gameplay" type="Node2D" unique_id=453224137]
 script = ExtResource("1_m7c0h")
@@ -15,47 +69,102 @@ script = ExtResource("1_m7c0h")
 [node name="UI" type="CanvasLayer" parent="." unique_id=1969751955]
 
 [node name="HUD" parent="UI" unique_id=1076876402 instance=ExtResource("1_wwjgm")]
+visible = false
 
 [node name="PauseMenu" type="CanvasLayer" parent="UI" unique_id=266166256]
+layer = 11
 script = ExtResource("3_lmhhx")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/PauseMenu" unique_id=1507971589]
+libraries/ = SubResource("AnimationLibrary_3cwn3")
+
 [node name="Panel" type="Panel" parent="UI/PauseMenu" unique_id=135837137]
+process_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_left = -267.0
+offset_top = -161.0
+offset_right = -267.0
+offset_bottom = -161.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Panel" unique_id=1048784304]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PauseMenu/Panel" unique_id=2071523894]
+z_index = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(3.365, 3.365)
+mouse_filter = 2
 
-[node name="Resume" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=8784425]
+[node name="TextureRectLeft" type="TextureRect" parent="UI/PauseMenu/Panel/HBoxContainer" unique_id=556301146]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_4jvq3")
+
+[node name="VBoxContainerLeft" type="VBoxContainer" parent="UI/PauseMenu/Panel/HBoxContainer/TextureRectLeft" unique_id=1048784304]
+z_index = 5
+layout_mode = 0
+offset_left = 12.184252
+offset_top = 14.264486
+offset_right = 125.18425
+offset_bottom = 150.26448
+scale = Vector2(0.46978894, 0.46978894)
+
+[node name="Resume" type="Button" parent="UI/PauseMenu/Panel/HBoxContainer/TextureRectLeft/VBoxContainerLeft" unique_id=8784425]
+z_index = 5
 layout_mode = 2
 text = "Resume"
 
-[node name="SaveSlot1" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=679000205]
+[node name="SaveGame" type="Button" parent="UI/PauseMenu/Panel/HBoxContainer/TextureRectLeft/VBoxContainerLeft" unique_id=534963319]
+z_index = 5
+layout_mode = 2
+text = "Save Game"
+
+[node name="Settings" type="Button" parent="UI/PauseMenu/Panel/HBoxContainer/TextureRectLeft/VBoxContainerLeft" unique_id=2071377737]
+z_index = 5
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitToMenu" type="Button" parent="UI/PauseMenu/Panel/HBoxContainer/TextureRectLeft/VBoxContainerLeft" unique_id=1840089490]
+z_index = 5
+layout_mode = 2
+text = "Quit To Menu"
+
+[node name="Control" type="Control" parent="UI/PauseMenu/Panel/HBoxContainer" unique_id=1405133218]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRectRight" type="TextureRect" parent="UI/PauseMenu/Panel/HBoxContainer/Control" unique_id=735541320]
+layout_mode = 0
+offset_left = -83.0
+offset_right = -4.0
+offset_bottom = 93.0
+mouse_filter = 2
+texture = ExtResource("6_sef18")
+
+[node name="VBoxContainerRight" type="VBoxContainer" parent="UI/PauseMenu/Panel/HBoxContainer/Control/TextureRectRight" unique_id=1129912732]
+layout_mode = 0
+offset_left = 10.907867
+offset_top = 20.505201
+offset_right = 68.90787
+offset_bottom = 156.5052
+scale = Vector2(0.9244212, 0.4713835)
+
+[node name="SaveSlot1" type="Button" parent="UI/PauseMenu/Panel/HBoxContainer/Control/TextureRectRight/VBoxContainerRight" unique_id=679000205]
 layout_mode = 2
 text = "Save 1"
 
-[node name="SaveSlot2" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=1293825621]
+[node name="SaveSlot2" type="Button" parent="UI/PauseMenu/Panel/HBoxContainer/Control/TextureRectRight/VBoxContainerRight" unique_id=1293825621]
 layout_mode = 2
 text = "Save 2"
 
-[node name="SaveSlot3" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=1765803715]
+[node name="SaveSlot3" type="Button" parent="UI/PauseMenu/Panel/HBoxContainer/Control/TextureRectRight/VBoxContainerRight" unique_id=1765803715]
 layout_mode = 2
 text = "Save 3"
-
-[node name="QuitToMenu" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=1840089490]
-layout_mode = 2
-text = "Quit To Menu"
 
 [node name="FadeLayer" type="CanvasLayer" parent="." unique_id=810341369]
 layer = 10

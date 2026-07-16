@@ -1,6 +1,234 @@
 [gd_scene format=3 uid="uid://cs3krpdhn2s0l"]
 
 [ext_resource type="Script" uid="uid://cmujba7iwctbi" path="res://ui/MainMenu/main_menu.gd" id="1_hnatv"]
+[ext_resource type="Texture2D" uid="uid://4bri1uikeyjx" path="res://assets/art/ui/MainMenu/Start.png" id="2_5lpjr"]
+[ext_resource type="Texture2D" uid="uid://blasvnd6r0g63" path="res://assets/art/ui/MainMenu/LoadGame.png" id="3_d5cii"]
+[ext_resource type="Texture2D" uid="uid://c0jtb2jxebeg8" path="res://assets/art/ui/MainMenu/Settings.png" id="4_stv1f"]
+[ext_resource type="Texture2D" uid="uid://df6y0flnxsk87" path="res://assets/art/ui/MainMenu/Credits.png" id="5_j4qb0"]
+[ext_resource type="Texture2D" uid="uid://bhf7ohhoexxw0" path="res://assets/art/ui/MainMenu/Exit.png" id="6_bcn1q"]
+[ext_resource type="Texture2D" uid="uid://sm3f1rexirki" path="res://assets/art/ui/MainMenu/Load1.png" id="7_c4ls7"]
+[ext_resource type="Texture2D" uid="uid://ddhii8pbc7mcq" path="res://assets/art/ui/MainMenu/Load2.png" id="8_d53yl"]
+[ext_resource type="Texture2D" uid="uid://bx7mvspk65xgc" path="res://assets/art/ui/MainMenu/Load3.png" id="9_k2dyq"]
+
+[sub_resource type="Animation" id="Animation_stv1f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer2/TextureRect4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-75.524475, 21.678333)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer2/TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-75.524475, 20.979033)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer2/TextureRect2/LoadSlot1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterContainer2/TextureRect3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-75.524475, 21)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CenterContainer2/TextureRect3/LoadSlot2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 3.8146973e-06)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CenterContainer2/TextureRect4/LoadSlot3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j4qb0"]
+resource_name = "load_close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer2/TextureRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.3985977, 0.6993122), Vector2(-1.3985977, 20.979033), Vector2(-74.12587, 20.979033)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer2/TextureRect2/LoadSlot1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, -1), Vector2(0, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer2/TextureRect3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.3985977, 21), Vector2(-0.69929504, 21), Vector2(-74.12587, 21)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterContainer2/TextureRect3/LoadSlot2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 3.8146973e-06), Vector2(0, 3.8146973e-06)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CenterContainer2/TextureRect4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1.3985977, 42.657356), Vector2(-1.3985977, 21.678335), Vector2(-74.12587, 21.678335)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CenterContainer2/TextureRect4/LoadSlot3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, 1), Vector2(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bcn1q"]
+resource_name = "load_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer2/TextureRect4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-75.524475, 21.678333), Vector2(-1.3985977, 21.678333), Vector2(-1.3985977, 42.657356)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer2/TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-75.524475, 20.979033), Vector2(-1.3985977, 20.979033), Vector2(-1.3985977, 0.6993122)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer2/TextureRect2/LoadSlot1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, -1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterContainer2/TextureRect3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-75.524475, 21), Vector2(-1.3985977, 21)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CenterContainer2/TextureRect3/LoadSlot2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 3.8146973e-06), Vector2(0, 3.8146973e-06)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c4ls7"]
+_data = {
+&"RESET": SubResource("Animation_stv1f"),
+&"load_close": SubResource("Animation_j4qb0"),
+&"load_open": SubResource("Animation_bcn1q")
+}
 
 [node name="MainMenu" type="Control" unique_id=1474029895]
 layout_mode = 3
@@ -18,28 +246,131 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.5
-offset_top = -20.0
-offset_right = 20.5
-offset_bottom = 20.0
+offset_left = -157.99997
+offset_top = -221.0
+offset_right = -93.99994
+offset_bottom = -119.99997
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(4.6763296, 4.6763296)
+mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1933730435]
+[node name="VBoxContainerLeft" type="VBoxContainer" parent="CenterContainer" unique_id=1933730435]
 layout_mode = 2
 
-[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=185246411]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainerLeft" unique_id=559795549]
 layout_mode = 2
+texture = ExtResource("2_5lpjr")
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainerLeft/TextureRect" unique_id=185246411]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 31.0
+scale = Vector2(1.0739189, 0.5892813)
 text = "Play"
 
-[node name="LoadSlot1" type="Button" parent="CenterContainer/VBoxContainer" unique_id=343815274]
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer/VBoxContainerLeft" unique_id=709561714]
 layout_mode = 2
+texture = ExtResource("3_d5cii")
+
+[node name="LoadGame" type="Button" parent="CenterContainer/VBoxContainerLeft/TextureRect2" unique_id=672780541]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 60.0
+offset_bottom = 32.0
+scale = Vector2(1.0449865, 0.5162886)
+text = "Play"
+
+[node name="TextureRect3" type="TextureRect" parent="CenterContainer/VBoxContainerLeft" unique_id=1461241176]
+layout_mode = 2
+texture = ExtResource("4_stv1f")
+
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainerLeft/TextureRect3" unique_id=130467775]
+layout_mode = 0
+offset_top = 0.5
+offset_right = 60.0
+offset_bottom = 31.5
+scale = Vector2(1.0449865, 0.5162886)
+text = "Play"
+
+[node name="TextureRect4" type="TextureRect" parent="CenterContainer/VBoxContainerLeft" unique_id=1725458834]
+layout_mode = 2
+texture = ExtResource("5_j4qb0")
+
+[node name="Credits" type="Button" parent="CenterContainer/VBoxContainerLeft/TextureRect4" unique_id=1991945816]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 31.0
+scale = Vector2(1.0449865, 0.5162886)
+text = "Play"
+
+[node name="Exit" type="TextureRect" parent="CenterContainer/VBoxContainerLeft" unique_id=1398592489]
+layout_mode = 2
+texture = ExtResource("6_bcn1q")
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainerLeft/Exit" unique_id=210206821]
+layout_mode = 0
+offset_top = 0.5
+offset_right = 60.0
+offset_bottom = 31.5
+scale = Vector2(1.0449865, 0.5162886)
+text = "Play"
+
+[node name="CenterContainer2" type="Control" parent="." unique_id=1629804486]
+anchors_preset = 0
+offset_left = 746.00006
+offset_top = 110.0
+offset_right = 810.00006
+offset_bottom = 169.0
+scale = Vector2(4.493182, 4.493182)
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer2" unique_id=731076614]
+layout_mode = 0
+offset_left = -75.524475
+offset_top = 20.979033
+offset_right = -11.524475
+offset_bottom = 37.97905
+texture = ExtResource("7_c4ls7")
+
+[node name="LoadSlot1" type="Button" parent="CenterContainer2/TextureRect2" unique_id=343815274]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 60.0
+offset_bottom = 30.0
+scale = Vector2(1.0489898, 0.6040174)
 text = "Load 1"
 
-[node name="LoadSlot2" type="Button" parent="CenterContainer/VBoxContainer" unique_id=903706723]
-layout_mode = 2
+[node name="TextureRect3" type="TextureRect" parent="CenterContainer2" unique_id=1449042928]
+layout_mode = 0
+offset_left = -75.524475
+offset_top = 21.0
+offset_right = -11.524475
+offset_bottom = 38.0
+texture = ExtResource("8_d53yl")
+
+[node name="LoadSlot2" type="Button" parent="CenterContainer2/TextureRect3" unique_id=903706723]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 31.000004
+scale = Vector2(1.0611529, 0.57154334)
 text = "Load 2"
 
-[node name="LoadSlot3" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1895129806]
-layout_mode = 2
+[node name="TextureRect4" type="TextureRect" parent="CenterContainer2" unique_id=1751805535]
+layout_mode = 0
+offset_left = -75.524475
+offset_top = 21.678333
+offset_right = -11.524475
+offset_bottom = 38.678368
+texture = ExtResource("9_k2dyq")
+
+[node name="LoadSlot3" type="Button" parent="CenterContainer2/TextureRect4" unique_id=1895129806]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 60.0
+offset_bottom = 32.0
+scale = Vector2(1.0688583, 0.51237506)
 text = "Load 3"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1771529061]
+libraries/ = SubResource("AnimationLibrary_c4ls7")
