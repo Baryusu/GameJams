@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://sm3f1rexirki" path="res://assets/art/ui/MainMenu/Load1.png" id="7_c4ls7"]
 [ext_resource type="Texture2D" uid="uid://ddhii8pbc7mcq" path="res://assets/art/ui/MainMenu/Load2.png" id="8_d53yl"]
 [ext_resource type="Texture2D" uid="uid://bx7mvspk65xgc" path="res://assets/art/ui/MainMenu/Load3.png" id="9_k2dyq"]
+[ext_resource type="Texture2D" uid="uid://c65liwl38r4bg" path="res://assets/art/ui/detective_game_splash.png" id="10_j4qb0"]
 
 [sub_resource type="Animation" id="Animation_stv1f"]
 length = 0.001
@@ -352,7 +353,7 @@ texture = ExtResource("8_d53yl")
 [node name="LoadSlot2" type="Button" parent="CenterContainer2/TextureRect3" unique_id=903706723]
 layout_mode = 0
 offset_right = 60.0
-offset_bottom = 31.000004
+offset_bottom = 31.000008
 scale = Vector2(1.0611529, 0.57154334)
 text = "Load 2"
 
@@ -374,3 +375,9 @@ text = "Load 3"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1771529061]
 libraries/ = SubResource("AnimationLibrary_c4ls7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=689210455]
+z_index = -10
+position = Vector2(562, 324)
+scale = Vector2(3.367188, 3.367188)
+texture = ExtResource("10_j4qb0")
