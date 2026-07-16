@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bqfkq06nkdms7"
+path="res://.godot/imported/computer.dialogue-c68ad67685a75db7cdc1a29aec484113.tres"
+
+[deps]
+
+source_file="res://items/viewable_items/computer/computer.dialogue"
+dest_files=["res://.godot/imported/computer.dialogue-c68ad67685a75db7cdc1a29aec484113.tres"]
+
+[params]
+
+defaults=true

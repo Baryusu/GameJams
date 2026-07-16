@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bjps84e45kia6"]
+
+[ext_resource type="Script" uid="uid://wx075rkhelu4" path="res://items/viewable_items/inside_door/inside_door.gd" id="1_5kojt"]
+[ext_resource type="Resource" uid="uid://sjcyp4sphka1" path="res://items/viewable_items/inside_door/inside_door.dialogue" id="2_r46yb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[node name="InsideDoor" type="Area2D" unique_id=975057062]
+script = ExtResource("1_5kojt")
+dialogue_resource = ExtResource("2_r46yb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=840394996]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://hfq0ojpke1fw"
+path="res://.godot/imported/talked_to_guards.dialogue-303dfa7c56782bcd6659638c1b79a621.tres"
+
+[deps]
+
+source_file="res://entities/player/cant_enter_dialogues/talked_to_guards.dialogue"
+dest_files=["res://.godot/imported/talked_to_guards.dialogue-303dfa7c56782bcd6659638c1b79a621.tres"]
+
+[params]
+
+defaults=true

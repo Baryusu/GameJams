@@ -1,0 +1,10 @@
+~ start
+Rivera: They really let anyone access evidence easily. Their security procedures need work. But let’s focus on watching the footage first.
+Rivera: Here’s the footage of when they took the girl out of the house.
+Rivera: Wait, pause.
+Rivera: Let’s zoom in…
+Rivera: The masked men seemed to have dropped something and failed to notice it.
+set GlobalData.watched_cctv = true
+Rivera: Thank you for letting me see this, officer.
+Receptionist Officer: No problem. Good luck on the case.
+=> END

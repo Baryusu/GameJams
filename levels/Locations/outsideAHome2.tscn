@@ -1,22 +1,17 @@
 [gd_scene format=3 uid="uid://d23cu4pq28e62"]
 
+[ext_resource type="Script" uid="uid://c7ss3w6f4ooj6" path="res://levels/Locations/camera_boundaries.gd" id="1_eatd8"]
 [ext_resource type="Texture2D" uid="uid://dodoi2ig7m8lh" path="res://assets/art/Locations/aurora_outside.png" id="1_yy0ei"]
-[ext_resource type="Texture2D" uid="uid://c85ehxscfuask" path="res://icon.svg" id="2_eatd8"]
-[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="3_eatd8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb7mp"]
-size = Vector2(20, 99.853165)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1s18"]
-size = Vector2(537.06195, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_icwj2"]
-size = Vector2(3551, 154)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fho7g"]
-size = Vector2(92, 680)
+[ext_resource type="PackedScene" uid="uid://dqmq7rmx6mq7o" path="res://entities/bystander/bystander.tscn" id="4_icwj2"]
+[ext_resource type="PackedScene" uid="uid://dlliadwy0te2t" path="res://entities/mother_and_son/mother_and_son.tscn" id="4_p1s18"]
+[ext_resource type="PackedScene" uid="uid://c1o4nyfwrbp45" path="res://levels/props/door/door.tscn" id="4_sb7mp"]
+[ext_resource type="PackedScene" uid="uid://bfbey1guu6ypi" path="res://items/viewable_items/trash/trash.tscn" id="6_i6uaa"]
+[ext_resource type="PackedScene" uid="uid://cgkwtophfhij4" path="res://items/viewable_items/posters/posters.tscn" id="7_8w8iv"]
+[ext_resource type="PackedScene" uid="uid://qy404m8e7bcp" path="res://items/viewable_items/cctv/cctv.tscn" id="8_isgjn"]
+[ext_resource type="PackedScene" uid="uid://c8nest40r68j5" path="res://items/viewable_items/sari_sari_store/sari_sari_store.tscn" id="9_hyna7"]
 
 [node name="OutsideAuroraHome" type="Node2D" unique_id=624279283]
+script = ExtResource("1_eatd8")
 
 [node name="Sprite" type="Node2D" parent="." unique_id=428387258]
 position = Vector2(1202, -77)
@@ -27,51 +22,56 @@ texture = ExtResource("1_yy0ei")
 
 [node name="NPC\'s" type="Node2D" parent="." unique_id=1037771077]
 
-[node name="NPC1Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=2011492439]
-position = Vector2(96, 2)
-scale = Vector2(0.1953125, 0.1953125)
-texture = ExtResource("2_eatd8")
+[node name="Mother_and_Son" parent="NPC\'s" unique_id=1311989888 instance=ExtResource("4_p1s18")]
+position = Vector2(86, 3)
 
-[node name="NPC2Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=1340532791]
-position = Vector2(216, -1)
-scale = Vector2(0.2109375, 0.2109375)
-texture = ExtResource("2_eatd8")
+[node name="Bystander" parent="NPC\'s" unique_id=950448998 instance=ExtResource("4_icwj2")]
+position = Vector2(455, -2)
 
-[node name="NPC3Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=1371214665]
-position = Vector2(440, 2)
-scale = Vector2(0.2265625, 0.2265625)
-texture = ExtResource("2_eatd8")
+[node name="Boundaries" type="Node" parent="." unique_id=1938218224]
 
-[node name="Walls" type="Node2D" parent="." unique_id=1459261294]
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries" unique_id=1328297604]
 
-[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=161576412]
-position = Vector2(-170, 0)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundaries/StaticBody2D" unique_id=1212655337]
+build_mode = 1
+polygon = PackedVector2Array(-23, 29, -23, -80, 633, -80, 633, 29)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1962386364]
-position = Vector2(80, -97)
-scale = Vector2(6.81, 6.81)
-shape = SubResource("RectangleShape2D_sb7mp")
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Boundaries/StaticBody2D" unique_id=536445314]
+build_mode = 1
+polygon = PackedVector2Array(633, -19, -23, -19, -23, -80, 632, -79)
 
-[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=410932229]
-position = Vector2(380, -360)
+[node name="CameraBoundaries" type="ReferenceRect" parent="." unique_id=1328950324]
+offset_left = -23.0
+offset_top = -79.0
+offset_right = 633.0
+offset_bottom = 29.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=1067588928]
-position = Vector2(1159, 273)
-scale = Vector2(6.705, 6.705)
-shape = SubResource("RectangleShape2D_p1s18")
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=769971838]
+position = Vector2(34, -7)
 
-[node name="Floor" type="StaticBody2D" parent="Walls" unique_id=2048890788]
-position = Vector2(-35, 170)
+[node name="SpawnPoint2" type="Marker2D" parent="." unique_id=394225208]
+position = Vector2(536, -6)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=291765206]
-position = Vector2(1573, -67)
-shape = SubResource("RectangleShape2D_icwj2")
+[node name="Items" type="Node" parent="." unique_id=1396587590]
 
-[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=567758291]
-position = Vector2(669, 1)
+[node name="Trash" parent="Items" unique_id=1403308771 instance=ExtResource("6_i6uaa")]
+position = Vector2(270, 3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=421654732]
-position = Vector2(10, -92)
-shape = SubResource("RectangleShape2D_fho7g")
+[node name="Posters" parent="Items" unique_id=1849187010 instance=ExtResource("7_8w8iv")]
+position = Vector2(186, -15)
 
-[node name="player" parent="." unique_id=1699463660 instance=ExtResource("3_eatd8")]
+[node name="Cctv" parent="Items" unique_id=1895647021 instance=ExtResource("8_isgjn")]
+position = Vector2(220, -15)
+
+[node name="SariSariStore" parent="Items" unique_id=210343375 instance=ExtResource("9_hyna7")]
+position = Vector2(378, -9)
+
+[node name="Doors" type="Node" parent="." unique_id=1175413179]
+
+[node name="Door" parent="Doors" unique_id=2026830631 instance=ExtResource("4_sb7mp")]
+position = Vector2(35, -9)
+target_scene = "uid://cfaj6882wh23n"
+
+[node name="Door2" parent="Doors" unique_id=498209889 instance=ExtResource("4_sb7mp")]
+position = Vector2(536, -7)
+target_scene = "uid://b5slnang5wgh"

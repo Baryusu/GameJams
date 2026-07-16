@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dxvya3tatngfu"
+path="res://.godot/imported/company_card.dialogue-da4a605b0418fa5b24caf7999efe439a.tres"
+
+[deps]
+
+source_file="res://items/claimable_items/company_card/company_card.dialogue"
+dest_files=["res://.godot/imported/company_card.dialogue-da4a605b0418fa5b24caf7999efe439a.tres"]
+
+[params]
+
+defaults=true

@@ -11,4 +11,5 @@ Guard 2: No warrant, no entry. (stern)
 Detective: Hmph… 
 Detective: Fine.
 Detective: (talks to himself) I’ll just have to find another way in.
+set GlobalData.talked_to_guards = true
 => END

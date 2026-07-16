@@ -5,12 +5,19 @@ var level_path: String = ""
 @onready var player = $player
 @onready var level_root = $LevelRoot
 
+@onready var fade_rect = $FadeLayer/ColorRect
+
 func _ready():
+	fade_rect.modulate.a = 1.0
 	# Load Level 1 immediately when Gameplay starts
 	load_area("res://levels/Locations/Detective_Office_Opening_Scene.tscn", "SpawnPoint")
 
 
 func load_area(path: String, spawn_point: String = ""):
+	var fade_out = create_tween()
+	fade_out.tween_property(fade_rect, "modulate:a", 1.0, 0.5) # Fades to fully opaque over 0.5 seconds
+	await fade_out.finished # Wait for the screen to go completely black
+	
 	# Clear old level
 	for child in level_root.get_children():
 		child.queue_free()
@@ -60,3 +67,5 @@ func load_area(path: String, spawn_point: String = ""):
 				player_camera.limit_top = -10000000
 				player_camera.limit_right = 10000000
 				player_camera.limit_bottom = 10000000
+	var fade_in = create_tween()
+	fade_in.tween_property(fade_rect, "modulate:a", 0.0, 0.5) # Fades back to transparent over 0.5 seconds

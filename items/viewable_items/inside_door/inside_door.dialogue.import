@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://sjcyp4sphka1"
+path="res://.godot/imported/inside_door.dialogue-92f5285798b3124174cff85d7939c7aa.tres"
+
+[deps]
+
+source_file="res://items/viewable_items/inside_door/inside_door.dialogue"
+dest_files=["res://.godot/imported/inside_door.dialogue-92f5285798b3124174cff85d7939c7aa.tres"]
+
+[params]
+
+defaults=true

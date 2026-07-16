@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bbqb8ssoekgj2"
+path="res://.godot/imported/spoke_to_parents.dialogue-8da650dc9dc694812584dfd3d29205cc.tres"
+
+[deps]
+
+source_file="res://entities/player/cant_enter_dialogues/spoke_to_parents.dialogue"
+dest_files=["res://.godot/imported/spoke_to_parents.dialogue-8da650dc9dc694812584dfd3d29205cc.tres"]
+
+[params]
+
+defaults=true

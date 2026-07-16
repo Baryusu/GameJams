@@ -56,3 +56,15 @@ text = "Save 3"
 [node name="QuitToMenu" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer" unique_id=1840089490]
 layout_mode = 2
 text = "Quit To Menu"
+
+[node name="FadeLayer" type="CanvasLayer" parent="." unique_id=810341369]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="FadeLayer" unique_id=942723199]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

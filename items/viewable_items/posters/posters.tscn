@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cgkwtophfhij4"]
+
+[ext_resource type="Script" uid="uid://3nsajwyljvoj" path="res://items/viewable_items/posters/posters.gd" id="1_kiusm"]
+[ext_resource type="Resource" uid="uid://cdvwkhiggvyf3" path="res://items/viewable_items/posters/posters.dialogue" id="2_pq7i3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3hqix"]
+
+[node name="Posters" type="Area2D" unique_id=1849187010]
+script = ExtResource("1_kiusm")
+dialogue_resource = ExtResource("2_pq7i3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=467576378]
+shape = SubResource("CircleShape2D_3hqix")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

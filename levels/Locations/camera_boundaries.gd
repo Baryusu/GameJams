@@ -2,13 +2,24 @@ extends Node2D
 
 @onready var bounds = $CameraBoundaries
 
-# --- DIALOGUE MANAGER ADD-ON VARIABLES ---
-# This lets you drag and drop your .dialogue file into the Inspector
 @export var dialogue_file: DialogueResource
-# This lets you type the specific starting node (e.g., "start_outside_house")
-@export var dialogue_title: String = ""
+@export var dialogue_title: String = "start"
 
 func _ready() -> void:
+	var dropped_card = get_node_or_null("Items/CompanyCard")
+	
+	if dropped_card != null:
+		var card_collision = dropped_card.get_node_or_null("CollisionShape2D")
+		
+		if GlobalData.watched_cctv == true:
+			dropped_card.show()
+			if card_collision != null:
+				card_collision.disabled = false
+		else:
+			dropped_card.hide()
+			if card_collision != null:
+				card_collision.disabled = true
+
 	# --- YOUR EXISTING CAMERA LOGIC ---
 	var camera = get_viewport().get_camera_2d()
 	if camera and bounds:
@@ -17,15 +28,10 @@ func _ready() -> void:
 		camera.limit_right = int(bounds.global_position.x + bounds.size.x)
 		camera.limit_bottom = int(bounds.global_position.y + bounds.size.y)
 		
-	# --- NEW: TRIGGER THE ADD-ON ---
-	# Only play if you actually assigned a file AND a title in the Inspector
-	if dialogue_file != null and dialogue_title != "":
+	# --- YOUR EXISTING DIALOGUE LOGIC ---
+	if dialogue_file != null:
 		play_opening_monologue()
 
 func play_opening_monologue() -> void:
-	# Wait a half second for the screen to fade in/load
-	await get_tree().create_timer(1.5).timeout
-	
-	# Call the add-on's built-in balloon function
-	# (Note: If your add-on uses a different function name to show the balloon, use that here!)
+	await get_tree().create_timer(0.5).timeout
 	DialogueManager.show_example_dialogue_balloon(dialogue_file, dialogue_title)

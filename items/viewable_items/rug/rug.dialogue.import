@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://befvna0dfdrv5"
+path="res://.godot/imported/rug.dialogue-408b9c4f3cf81a8bff4a36e5a471a157.tres"
+
+[deps]
+
+source_file="res://items/viewable_items/rug/rug.dialogue"
+dest_files=["res://.godot/imported/rug.dialogue-408b9c4f3cf81a8bff4a36e5a471a157.tres"]
+
+[params]
+
+defaults=true

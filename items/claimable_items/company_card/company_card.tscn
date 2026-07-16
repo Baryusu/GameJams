@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://htnv284nwl45"]
+
+[ext_resource type="Script" uid="uid://dfs73cbu0vasl" path="res://items/claimable_items/company_card/company_card.gd" id="1_2gssc"]
+[ext_resource type="Texture2D" uid="uid://db87fkaw8otlp" path="res://items/claimable_items/company_card/company_card.png" id="2_y8bhc"]
+[ext_resource type="Resource" uid="uid://dxvya3tatngfu" path="res://items/claimable_items/company_card/company_card.dialogue" id="3_vfapp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[node name="CompanyCard" type="Area2D" unique_id=176473816]
+script = ExtResource("1_2gssc")
+item_id = "item01"
+item_name = "Carabosse Inc. Company Card"
+item_icon = ExtResource("2_y8bhc")
+item_description = "A card revealing the company Mr. Ignacio owns. It looks pretty scary."
+dialogue_file = ExtResource("3_vfapp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1099829154]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_y8bhc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057861291]
+shape = SubResource("CircleShape2D_g4v7s")

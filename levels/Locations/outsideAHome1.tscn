@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://cq4fquegoc57f" path="res://entities/player/player.dialogue" id="2_u2ra3"]
 [ext_resource type="PackedScene" uid="uid://bp74ss8u4mwqc" path="res://entities/aurora_parents/aurora_parents.tscn" id="3_6ayoa"]
 [ext_resource type="PackedScene" uid="uid://c1o4nyfwrbp45" path="res://levels/props/door/door.tscn" id="5_nbkt0"]
+[ext_resource type="Resource" uid="uid://bbqb8ssoekgj2" path="res://entities/player/cant_enter_dialogues/spoke_to_parents.dialogue" id="6_gio4a"]
 
 [node name="OutsideAuroraHome" type="Node2D" unique_id=518369344]
 script = ExtResource("1_6ayoa")
@@ -47,4 +48,5 @@ position = Vector2(-322, -17)
 [node name="Door" parent="." unique_id=2026830631 instance=ExtResource("5_nbkt0")]
 position = Vector2(-276, -23)
 target_scene = "uid://cfaj6882wh23n"
-needs_parent_interview = true
+required_flag = "spoke_to_parents"
+locked_dialogue_file = ExtResource("6_gio4a")

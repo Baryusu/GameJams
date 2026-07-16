@@ -11,3 +11,5 @@ var journal: Array = []
 var collected_page_ids: Array = []
 
 var spoke_to_parents: bool = false
+var watched_cctv: bool = false
+var talked_to_guards: bool = false

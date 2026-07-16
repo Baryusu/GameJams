@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cqvva56h4p1j5"
+path="res://.godot/imported/sari_sari_store.dialogue-07ad4966e52d36d4107d0ddd7de64b99.tres"
+
+[deps]
+
+source_file="res://items/viewable_items/sari_sari_store/sari_sari_store.dialogue"
+dest_files=["res://.godot/imported/sari_sari_store.dialogue-07ad4966e52d36d4107d0ddd7de64b99.tres"]
+
+[params]
+
+defaults=true

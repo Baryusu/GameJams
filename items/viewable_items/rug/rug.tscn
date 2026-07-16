@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dcp8ss4ekrbca"]
+
+[ext_resource type="Script" uid="uid://bvt2itmg5hrqd" path="res://items/viewable_items/rug/rug.gd" id="1_u01x0"]
+[ext_resource type="Resource" uid="uid://befvna0dfdrv5" path="res://items/viewable_items/rug/rug.dialogue" id="2_2vbsd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[node name="Rug" type="Area2D" unique_id=844189697]
+script = ExtResource("1_u01x0")
+dialogue_resource = ExtResource("2_2vbsd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=333163368]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://nygigkvbkq5l"]
+
+[ext_resource type="Script" uid="uid://bijoj5jcxmo36" path="res://items/viewable_items/desk/desk.gd" id="1_fyw4e"]
+[ext_resource type="Resource" uid="uid://dut25jp6aia3s" path="res://items/viewable_items/desk/desk.dialogue" id="2_ol8lu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[node name="Desk" type="Area2D" unique_id=515059233]
+script = ExtResource("1_fyw4e")
+dialogue_resource = ExtResource("2_ol8lu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1671427631]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

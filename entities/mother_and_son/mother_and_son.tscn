@@ -44,12 +44,12 @@ animations = [{
 radius = 27.051392
 
 [node name="Mother_and_Son" type="Area2D" unique_id=1311989888]
-scale = Vector2(3, 3)
 script = ExtResource("1_b57d3")
 dialogue_resource = ExtResource("2_64wa4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=432901198]
-position = Vector2(-1.3333334, -0.33333334)
+position = Vector2(-2, -4.9999995)
+scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_h3sii")
 animation = &"idle"
 
@@ -59,15 +59,8 @@ sprite_frames = SubResource("SpriteFrames_h3sii")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1046491885]
-position = Vector2(4, -0.33333334)
+position = Vector2(3, -2)
 shape = SubResource("CircleShape2D_3m43b")
-
-[node name="Label" type="Label" parent="." unique_id=1639965296]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "[E] Interact"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

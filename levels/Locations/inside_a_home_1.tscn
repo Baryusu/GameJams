@@ -2,8 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c7ss3w6f4ooj6" path="res://levels/Locations/camera_boundaries.gd" id="1_q2xgv"]
 [ext_resource type="Texture2D" uid="uid://cifxyobmpw4a8" path="res://assets/art/Locations/aurora_house.png" id="1_vij41"]
+[ext_resource type="PackedScene" uid="uid://nv1vq7hcaryr" path="res://items/viewable_items/cloth/cloth.tscn" id="3_go4l8"]
 [ext_resource type="PackedScene" uid="uid://dbopept837dvn" path="res://items/viewable_items/music_box/music_box.tscn" id="3_qopjm"]
 [ext_resource type="Resource" uid="uid://dn0upj4nm0p0y" path="res://items/viewable_items/music_box/music_box.dialogue" id="4_sxoyt"]
+[ext_resource type="PackedScene" uid="uid://cexd3vtjb5dkk" path="res://items/viewable_items/cabinet/cabinet.tscn" id="5_sxoyt"]
+[ext_resource type="PackedScene" uid="uid://bjps84e45kia6" path="res://items/viewable_items/inside_door/inside_door.tscn" id="6_uhixc"]
+[ext_resource type="PackedScene" uid="uid://dcp8ss4ekrbca" path="res://items/viewable_items/rug/rug.tscn" id="8_7eie3"]
+[ext_resource type="PackedScene" uid="uid://htnv284nwl45" path="res://items/claimable_items/company_card/company_card.tscn" id="9_8ut3i"]
+[ext_resource type="PackedScene" uid="uid://c1o4nyfwrbp45" path="res://levels/props/door/door.tscn" id="9_pp51a"]
 
 [node name="InsideAHome1" type="Node2D" unique_id=1744852878]
 script = ExtResource("1_q2xgv")
@@ -40,8 +46,28 @@ polygon = PackedVector2Array(248, -44, -27, -44, -27, -102, 248, -102)
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=2140371204]
 position = Vector2(268, 14)
 
-[node name="Node" type="Node" parent="." unique_id=527214889]
+[node name="Items" type="Node" parent="." unique_id=527214889]
 
-[node name="MusicBox" parent="Node" unique_id=713348378 instance=ExtResource("3_qopjm")]
+[node name="MusicBox" parent="Items" unique_id=713348378 instance=ExtResource("3_qopjm")]
 position = Vector2(219, 1)
 dialogue_resource = ExtResource("4_sxoyt")
+
+[node name="Cabinet" parent="Items" unique_id=1089828803 instance=ExtResource("5_sxoyt")]
+position = Vector2(96, 13)
+
+[node name="InsideDoor" parent="Items" unique_id=975057062 instance=ExtResource("6_uhixc")]
+position = Vector2(129, 13)
+
+[node name="Cloth" parent="Items" unique_id=91575123 instance=ExtResource("3_go4l8")]
+position = Vector2(184, 28)
+
+[node name="Rug" parent="Items" unique_id=844189697 instance=ExtResource("8_7eie3")]
+position = Vector2(247, 37)
+
+[node name="CompanyCard" parent="Items" unique_id=176473816 instance=ExtResource("9_8ut3i")]
+position = Vector2(61, 33)
+transition_target_scene = "uid://xmpyg87nv0pa"
+
+[node name="Door" parent="." unique_id=2026830631 instance=ExtResource("9_pp51a")]
+position = Vector2(269, 11)
+target_scene = "uid://d23cu4pq28e62"

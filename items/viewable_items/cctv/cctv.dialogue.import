@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://drmbduc2geonm"
+path="res://.godot/imported/cctv.dialogue-0f97e497b36815ba1d0b9535c4c87107.tres"
+
+[deps]
+
+source_file="res://items/viewable_items/cctv/cctv.dialogue"
+dest_files=["res://.godot/imported/cctv.dialogue-0f97e497b36815ba1d0b9535c4c87107.tres"]
+
+[params]
+
+defaults=true

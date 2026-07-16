@@ -1,24 +1,18 @@
 [gd_scene format=3 uid="uid://b5slnang5wgh"]
 
-[ext_resource type="PackedScene" uid="uid://cqlxnye7ryl80" path="res://entities/player/player.tscn" id="1_vw1d8"]
-[ext_resource type="Texture2D" uid="uid://c85ehxscfuask" path="res://icon.svg" id="2_2ivub"]
+[ext_resource type="Script" uid="uid://c7ss3w6f4ooj6" path="res://levels/Locations/camera_boundaries.gd" id="1_2ivub"]
+[ext_resource type="PackedScene" uid="uid://d1mb8s3geylsx" path="res://entities/receptionist_officer/receptionist_officer.tscn" id="2_2ivub"]
+[ext_resource type="PackedScene" uid="uid://cgkwtophfhij4" path="res://items/viewable_items/posters/posters.tscn" id="3_gua86"]
+[ext_resource type="Resource" uid="uid://byx7gf2adjb6v" path="res://items/viewable_items/posters/posters2.dialogue" id="4_ovtbm"]
+[ext_resource type="PackedScene" uid="uid://nygigkvbkq5l" path="res://items/viewable_items/desk/desk.tscn" id="5_1wh6i"]
+[ext_resource type="PackedScene" uid="uid://cw5ns1dq2xdya" path="res://items/viewable_items/computer/computer.tscn" id="6_cqu7b"]
+[ext_resource type="PackedScene" uid="uid://c1o4nyfwrbp45" path="res://levels/props/door/door.tscn" id="7_cqu7b"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qjj7x"]
 load_path = "res://.godot/imported/police_station_interior.png-fa27b1a9764d69d6f616fd948b2a7f4c.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjj7x"]
-size = Vector2(20, 99.853165)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vw1d8"]
-size = Vector2(343.02762, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ivub"]
-size = Vector2(2187, 154)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mknm7"]
-size = Vector2(92, 680)
-
 [node name="PoliceInterior" type="Node2D" unique_id=1065931203]
+script = ExtResource("1_2ivub")
 
 [node name="Sprite" type="Node2D" parent="." unique_id=1957220821]
 position = Vector2(737, -77)
@@ -27,51 +21,45 @@ position = Vector2(737, -77)
 position = Vector2(-514, 79)
 texture = SubResource("CompressedTexture2D_qjj7x")
 
-[node name="Walls" type="Node2D" parent="." unique_id=1417050582]
-
-[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1745288007]
-position = Vector2(-62, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=1480165351]
-position = Vector2(0, -96.000015)
-scale = Vector2(6.81, 6.81)
-shape = SubResource("RectangleShape2D_qjj7x")
-
-[node name="Ceiling" type="StaticBody2D" parent="Walls" unique_id=1619468738]
-position = Vector2(531, -338)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Ceiling" unique_id=1198637881]
-position = Vector2(508, 273.00003)
-scale = Vector2(6.705, 6.705)
-shape = SubResource("RectangleShape2D_vw1d8")
-
-[node name="Floor" type="StaticBody2D" parent="Walls" unique_id=2142878666]
-position = Vector2(175, 250)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Floor" unique_id=1695049251]
-position = Vector2(886.5, -125)
-shape = SubResource("RectangleShape2D_2ivub")
-
-[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=92368288]
-position = Vector2(476, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=1543743055]
-position = Vector2(10, -92)
-shape = SubResource("RectangleShape2D_mknm7")
-
-[node name="player" parent="." unique_id=1699463660 instance=ExtResource("1_vw1d8")]
-position = Vector2(414, 23)
-
 [node name="NPC\'s" type="Node2D" parent="." unique_id=1227215859]
 
-[node name="NPC1Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=497611495]
-position = Vector2(968, 0)
-texture = ExtResource("2_2ivub")
+[node name="ReceptionistOfficer" parent="NPC\'s" unique_id=1021844719 instance=ExtResource("2_2ivub")]
+position = Vector2(175, 17)
 
-[node name="NPC2Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=1067566264]
-position = Vector2(1371, 0)
-texture = ExtResource("2_2ivub")
+[node name="CameraBoundaries" type="ReferenceRect" parent="." unique_id=2096047901]
+offset_left = 13.0
+offset_top = -60.0
+offset_right = 433.0
+offset_bottom = 50.0
 
-[node name="NPC3Placeholder" type="Sprite2D" parent="NPC\'s" unique_id=835003067]
-position = Vector2(1174, 24)
-texture = ExtResource("2_2ivub")
+[node name="Boundaries" type="Node" parent="." unique_id=1523681180]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Boundaries" unique_id=215095476]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundaries/StaticBody2D" unique_id=1473776278]
+build_mode = 1
+polygon = PackedVector2Array(13, 50, 13, -60, 433, -60, 433, 50)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Boundaries/StaticBody2D" unique_id=2013911654]
+build_mode = 1
+polygon = PackedVector2Array(433, -2, 13, -2, 13, -60, 433, -60)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=128387863]
+position = Vector2(413, 18)
+
+[node name="Items" type="Node" parent="." unique_id=1408854899]
+
+[node name="Posters" parent="Items" unique_id=1849187010 instance=ExtResource("3_gua86")]
+position = Vector2(314, -6)
+dialogue_resource = ExtResource("4_ovtbm")
+
+[node name="Desk" parent="Items" unique_id=515059233 instance=ExtResource("5_1wh6i")]
+position = Vector2(239, 13)
+
+[node name="Computer" parent="Items" unique_id=314669420 instance=ExtResource("6_cqu7b")]
+position = Vector2(74, 11)
+
+[node name="Door" parent="." unique_id=2026830631 instance=ExtResource("7_cqu7b")]
+position = Vector2(414, 12)
+target_scene = "uid://d23cu4pq28e62"
+target_spawn_point = "SpawnPoint2"

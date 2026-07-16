@@ -44,11 +44,11 @@ animations = [{
 radius = 25.68614
 
 [node name="Guard2" type="Area2D" unique_id=1311989888]
-scale = Vector2(3, 3)
 script = ExtResource("1_ko3ti")
 dialogue_resource = ExtResource("2_eq2tq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=432901198]
+scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_h3sii")
 animation = &"idle"
 

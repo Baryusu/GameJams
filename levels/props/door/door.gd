@@ -1,35 +1,48 @@
 extends Area2D
+
 @export_file("*.tscn") var target_scene: String
 @export var target_spawn_point: String = "SpawnPoint"
-var showInteractionLabel:= false
-@export var needs_parent_interview: bool = false
+
+@export var required_flag: String = ""
+@export var locked_dialogue_file: DialogueResource
+@export var locked_dialogue_title: String = "start"
+
+var showInteractionLabel := false
+
+func _ready() -> void:
+	# --- NEW: AUTO-CONNECT SIGNALS ---
+	# This ensures the door always works, even if the Editor disconnects it!
+	if not body_entered.is_connected(_on_body_entered):
+		body_entered.connect(_on_body_entered)
+	if not body_exited.is_connected(_on_body_exited):
+		body_exited.connect(_on_body_exited)
 
 func _process(_delta):
 	$Label.visible = showInteractionLabel
 	
-	if showInteractionLabel && Input.is_action_just_pressed("interact"):
-		transition_scene()
+	if showInteractionLabel and Input.is_action_just_pressed("interact"):
+		try_open_door()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player: showInteractionLabel = true
-
+	# --- NEW: BULLETPROOF PLAYER CHECK ---
+	# Checks for both spellings so it doesn't break!
+	if body.name == "Player" or body.name == "player": 
+		showInteractionLabel = true
 
 func _on_body_exited(body: Node2D) -> void:
-	if body is Player: showInteractionLabel = false
+	if body.name == "Player" or body.name == "player": 
+		showInteractionLabel = false
 	
-func transition_scene() -> void:
-	if needs_parent_interview == true and GlobalData.spoke_to_parents == false:
-		print("The door is locked! Talk to the parents first.")
-		return # This stops the rest of the code from running!
-		
+func try_open_door() -> void:
+	if required_flag != "" and GlobalData.get(required_flag) == false:
+		if locked_dialogue_file != null:
+			DialogueManager.show_example_dialogue_balloon(locked_dialogue_file, locked_dialogue_title)
+		return 
+
 	if target_scene == "":
 		print("No door available")
 	else:
-		# 1. Find the main Gameplay node (Assuming it is the root node of your game)
 		var gameplay_manager = get_tree().current_scene
 		
-		# 2. Tell the Gameplay manager to swap the levels using your friend's function!
-		if gameplay_manager != null:
+		if gameplay_manager != null and gameplay_manager.has_method("load_area"):
 			gameplay_manager.load_area(target_scene, target_spawn_point)
-		else:
-			print("Error: Could not find the Gameplay node!")

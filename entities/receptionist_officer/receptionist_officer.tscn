@@ -44,11 +44,11 @@ animations = [{
 radius = 29.696615
 
 [node name="ReceptionistOfficer" type="Area2D" unique_id=1021844719]
-scale = Vector2(3, 3)
 script = ExtResource("1_wmb68")
 dialogue_resource = ExtResource("2_p80b4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1534488494]
+scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"idle"
 autoplay = "idle"

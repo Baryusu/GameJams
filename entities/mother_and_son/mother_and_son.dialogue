@@ -1,5 +1,9 @@
 ~ start
-Rivera: Hello ma’am, I know it’s been a while since Aurora disappeared, but do you have any information that could help us in this case?
-Mom: Yes! I saw a silver Toyota Vios parked outside their house. The streetlight didn’t hit the plate number, so I couldn’t see.
-Son: Yeah, my mother woke up at that time because she had to pee. We both saw the car, but we only looked at it. We don’t want to involve ourselves in anything.
+if GlobalData.watched_cctv == false:
+	Rivera: Hello ma’am, I know it’s been a while since Aurora disappeared, but do you have any information that could help us in this case?
+	Mom: Yes! I saw a silver Toyota Vios parked outside their house. The streetlight didn’t hit the plate number, so I couldn’t see.
+	Son: Yeah, my mother woke up at that time because she had to pee. We both saw the car, but we only looked at it. We don’t want to involve ourselves in anythtrue.
+else:
+	Mom: I am a USC student
+
 => END

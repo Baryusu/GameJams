@@ -12,7 +12,6 @@ func _ready():
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
 func _process(delta):
-	$Label.visible = showInteractionLabel
 	anim.play("idle")
 	if showInteractionLabel && Input.is_action_just_pressed("interact"):
 		trigger_dialogue()
