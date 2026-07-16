@@ -1,11 +1,14 @@
 extends Node2D
 
+var level_path: String = ""
+
 @onready var player = $player
 @onready var level_root = $LevelRoot
 
 func _ready():
 	# Load Level 1 immediately when Gameplay starts
 	load_area("res://levels/Locations/Detective_Office_Opening_Scene.tscn", "SpawnPoint")
+
 
 func load_area(path: String, spawn_point: String = ""):
 	# Clear old level
@@ -15,7 +18,8 @@ func load_area(path: String, spawn_point: String = ""):
 	# Instance new level
 	var new_area = load(path).instantiate()
 	level_root.add_child(new_area)
-
+	
+	level_path = path
 	# Move player to spawn point marker inside new area
 	if spawn_point != "":
 		var spawn = new_area.get_node_or_null(spawn_point)

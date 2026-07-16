@@ -31,3 +31,15 @@ layout_mode = 2
 [node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=185246411]
 layout_mode = 2
 text = "Play"
+
+[node name="LoadSlot1" type="Button" parent="CenterContainer/VBoxContainer" unique_id=343815274]
+layout_mode = 2
+text = "Load 1"
+
+[node name="LoadSlot2" type="Button" parent="CenterContainer/VBoxContainer" unique_id=903706723]
+layout_mode = 2
+text = "Load 2"
+
+[node name="LoadSlot3" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1895129806]
+layout_mode = 2
+text = "Load 3"
